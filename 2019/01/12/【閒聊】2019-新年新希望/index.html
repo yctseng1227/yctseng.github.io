@@ -1,0 +1,134 @@
+<!DOCTYPE html><html lang="zh-TW"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><meta name="author" content="yctseng"><meta name="renderer" content="webkit"><meta name="copyright" content="yctseng"><meta name="keywords" content="yctseng's Blog"><meta name="description" content="關於一些路邊撿到的靈感"><meta name="Cache-Control" content="no-cache"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>【閒聊】2019 新年新希望 · yctseng's Blog</title><link rel="stylesheet" href="/css/style.css?v=2018.7.9"><link rel="stylesheet" href="/css/animation.css?v=2018.7.9"><link rel="icon" href="/img/assets/favicon.ico"><link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css?version=1.5.6"><!-- scripts--><script>(function( w ){
+  "use strict";
+  // rel=preload support test
+  if( !w.loadCSS ){
+    w.loadCSS = function(){};
+  }
+  // define on the loadCSS obj
+  var rp = loadCSS.relpreload = {};
+  // rel=preload feature support test
+  // runs once and returns a function for compat purposes
+  rp.support = (function(){
+    var ret;
+    try {
+      ret = w.document.createElement( "link" ).relList.supports( "preload" );
+    } catch (e) {
+      ret = false;
+    }
+    return function(){
+      return ret;
+    };
+  })();
+
+  // if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+  // then change that media back to its intended value on load
+  rp.bindMediaToggle = function( link ){
+    // remember existing media attr for ultimate state, or default to 'all'
+    var finalMedia = link.media || "all";
+
+    function enableStylesheet(){
+      link.media = finalMedia;
+    }
+
+    // bind load handlers to enable media
+    if( link.addEventListener ){
+      link.addEventListener( "load", enableStylesheet );
+    } else if( link.attachEvent ){
+      link.attachEvent( "onload", enableStylesheet );
+    }
+
+    // Set rel and non-applicable media type to start an async request
+    // note: timeout allows this to happen async to let rendering continue in IE
+    setTimeout(function(){
+      link.rel = "stylesheet";
+      link.media = "only x";
+    });
+    // also enable media after 3 seconds,
+    // which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+    setTimeout( enableStylesheet, 3000 );
+  };
+
+  // loop through link elements in DOM
+  rp.poly = function(){
+    // double check this to prevent external calls from running
+    if( rp.support() ){
+      return;
+    }
+    var links = w.document.getElementsByTagName( "link" );
+    for( var i = 0; i < links.length; i++ ){
+      var link = links[ i ];
+      // qualify links to those with rel=preload and as=style attrs
+      if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+        // prevent rerunning on link
+        link.setAttribute( "data-loadcss", true );
+        // bind listeners to toggle media back
+        rp.bindMediaToggle( link );
+      }
+    }
+  };
+
+  // if unsupported, run the polyfill
+  if( !rp.support() ){
+    // run once at least
+    rp.poly();
+
+    // rerun poly on an interval until onload
+    var run = w.setInterval( rp.poly, 500 );
+    if( w.addEventListener ){
+      w.addEventListener( "load", function(){
+        rp.poly();
+        w.clearInterval( run );
+      } );
+    } else if( w.attachEvent ){
+      w.attachEvent( "onload", function(){
+        rp.poly();
+        w.clearInterval( run );
+      } );
+    }
+  }
+
+
+  // commonjs
+  if( typeof exports !== "undefined" ){
+    exports.loadCSS = loadCSS;
+  }
+  else {
+    w.loadCSS = loadCSS;
+  }
+}( typeof global !== "undefined" ? global : this ) );</script><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" defer></script><script src="/js/main.js?v=2018.7.9" defer></script><!-- fancybox--><link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script><!-- busuanzi--></head><body><section class="profile-close" id="cxo-profile"><div class="profile-avatar"><i class="fa fa-caret-left"></i><img src="/img/assets/yctseng.png"></div><!--.profile-saying
+  i.fa.fa-comment
+  .saying--><div class="cxo-profile-inner"><div class="profile-name">yctseng</div><div class="profile-signature">有事者，試競程</div><div class="read-progress"></div></div></section><header id="cxo-intro" style="height: 70vh;background-image: url(/img/intro/black_cube.jpg);"><nav id="cxo-intro-nav"><section><div class="intro-nav-title"><a href="/">Journey</a></div><div class="intro-nav-label-box"><a href="/">Home</a><a href="/about/">About</a><a href="/archives/">Archives</a><a href="/tags/">Tags</a></div><i class="fa fa-bars intro-nav-menu"><div class="intro-nav-drop"><a href="/">Home</a><a href="/about/">About</a><a href="/archives/">Archives</a><a href="/tags/">Tags</a></div></i><div class="clear"></div></section></nav><h1 class="post-title">【閒聊】2019 新年新希望</h1><div class="post-intros"><div class="post-intro-meta"><span class="post-intro-time"><i class="post-intro-calendar fa fa-calendar"></i><span>2019-01-12</span></span><span class="post-intro-tags"><a class="intro-tag fa fa-tag" href="javascript:void(0)" date-tags="生活札記"> 生活札記</a></span></div></div></header><article class="cxo-up" id="cxo-content-outer"><section id="cxo-content-inner"><article class="article-entry" id="post"><p><img src="https://imgur.com/GLsFn3X.png" alt=""></p>
+<p>嗯…現在已經差不多要一月中旬了，我下週要期末考QQ<br>這個部落格最近才開始啟用，繼 Wordpress.com 和 Medium 後現在慢慢摸索 github page 的功能。</p>
+<p>總之來說說 2019年的一些目標吧～<br>沒想到轉眼間就要大學畢業了呢（如果沒意外的話XD）</p>
+ <a id="more"></a>
+<ul>
+<li>多益英文 600 / 990</li>
+</ul>
+<p>目前所在的大學英文畢業門檻已經搞不清楚是550還是590了(#<br>但考慮到未來可能研究所門檻更高，至少希望能有600分的能力，雖然這幾年考多益真的考到我面如死灰…嗚嗚</p>
+<ul>
+<li>大學程式競賽相關（離畢業倒數半年）<ul>
+<li>CPE檢定<br>數起來大約剩 2 次了，先不論研究所會不會繼續報名…<br>但我希望剩下兩次可以想辦法拿到 6 題成績（合掌）。</li>
+<li>ITSA &amp; PTC 月賽<br>重心差不多轉移到PTC了，上次的3題真的信心大增!!<br>希望可以繼續保持下去 &gt;_&lt;</li>
+<li>ITSA 桂冠挑戰大賽<br>呃嗯，時間有點尷尬。目前規劃的畢旅說不定會撞到QQ<br>但如果真的如期出席希望可以衝排名10以內（去年排名14拿下佳作）。</li>
+</ul>
+</li>
+</ul>
+<p>去年年底默默報了台大的 IOI camp，雖然從課程規劃來看好像只有當砲灰的份#<br>但好歹也算是社長，希望到時候可以學點東西帶回來給學弟妹分享！</p>
+<ul>
+<li>Codeforces 目標: Expert Rating</li>
+</ul>
+<p>比起上面的目標，CF由於不限身份又是線上競賽，就當作長期目標吧 : &gt;<br>先簡單給圈外人一份關於Rating表格～（扔</p>
+<div style="width: 300px; margin: auto"><br><img src="https://imgur.com/dbiGQHe.jpg" alt=""><br></div>
+
+<blockquote>
+<p>當初在WordPress拉這表格很頭痛，索性直接畫成圖了www</p>
+</blockquote>
+<p>如表格中所見各等級在 user ID 的顏色區分。<br>目前我還在純綠字，希望年底能爬上藍字QQ<br>說是這麼說…不過在凌晨的Educational Codeforces Round 58，我在賽後居然被hack兩題直接掛蛋，看起來稍後結算完Rating又要下去啦嗚哇哇哇 : (</p>
+<p><img src="https://imgur.com/tqFl2RI.jpg" alt=""></p>
+<ul>
+<li>研究所</li>
+</ul>
+<p>目前狀態是剛結束研究所推甄還在等某間備取 zzz。<br>歷經國高中考試人生，所以當去年底得知名次可以推推看就毫不猶豫衝了！<br>姑且算有學校念，但等到結果確定應該會再另外生一篇關於推甄的心得～<br>既然是新希望那當然指的是進去後能夠順利… 至少要努力活下去(?)</p>
+<p>&nbsp;<br>&nbsp;</p>
+<p>大概就醬吧：）<br>其他像是減肥、找失蹤的女朋友之類的年年都在許願就算了www<br>至少今年希望可以順利，距離學生生活好像越來越接近尾聲呢 QQ</p>
+<div style="width: 168px; margin: auto"><img src="/imges/end.png" alt=""></div></article><!-- lincense--><div class="post-paginator"><a class="prevSlogan" href="/2019/01/22/【週記】一些生活漫談、3939得第一/" title="【週記】一些生活漫談、3939得第一!?"><span>< PreviousPost</span><br><span class="prevTitle">【週記】一些生活漫談、3939得第一!?</span></a><div class="clear"></div></div><div id="comment"></div></section></article><footer id="cxo-footer-outer"><div id="cxo-footer-inner"><p class="footer-container"><span>Site by </span><a href="http://hexo.io"><span>Hexo</span></a><span> | theme </span><a href="https://github.com/Longlongyu/hexo-theme-Cxo"><span>Cxo</span></a></p></div></footer><!-- catelog--><div class="toc-wrapper" style="top: 70vh;"><div class="toc-catalog"><i class="fa fa-list"> </i><span>CATALOG</span></div></div><!-- top--><i class="fa fa-arrow-up close" id="go-up" aria-hidden="true"></i></body></html>
