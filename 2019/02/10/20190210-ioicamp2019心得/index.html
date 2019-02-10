@@ -111,7 +111,7 @@
 <p>然後看著一群不認識的學員在互相認親，事後看FB心得才曉得原來很多高中生學員早在 IMO 或是 TOI 之類的場合就認識了，覺得自己被孤立只好硬著頭皮找旁邊的學員搭話0.0  </p>
 <p>OK, 我的團體賽的隊友是一位清大的大四生+實中的高一生，簡單介紹一下:<br>高一的同學很沈默，這幾天下來也看他一直在刷codeforces的題庫，努力聊一下才曉得他去年九月才接觸程式競賽，不過他的Rating比我高很多，程度進步到讓我hen害怕。<br>另一位清大生是位高手，團體賽靠他排名很前面，另外他似乎坐不住，時不時就突然消失跑到教室外面閒晃，常常去廁所的路上都會碰到XDDDD</p>
 <hr>
-<p>上午是<a href="https://hackmd.io/p/ry1P-slfV#/" target="_blank" rel="noopener">Eddy時間</a>，算是朝聖CF紅人，畢竟他在我的CF追蹤清單內算出盡風頭(?)<br>從他的競賽經歷分享聽到不少有趣的事，附上我當下的筆記可以參考看看~</p>
+<p>上午是<a href="https://hackmd.io/p/ry1P-slfV#/" target="_blank" rel="noopener">Eddy時間</a>，算是朝聖codeforces紅人，畢竟他在我的追蹤清單內算出盡風頭(?)<br>從他的競賽經歷分享聽到不少有趣的事，附上我當下的筆記可以參考看看~</p>
 <p>下午是<a href="https://docs.google.com/presentation/d/1cI-kglF4zU8RKK8or3M11PlrqO5STB19HVNkIZ-yweQ/edit#slide=id.p" target="_blank" rel="noopener">組合賽局</a>，自然又再一次提到Nim game，讓我想起2016年參加交大PCCA寒訓的第一堂課，講到理論就是看台下各種硬撐(頭痛)，從之後的練習題稍稍有抓到一點感覺，但大部分的題目還是推不出來啊…慘。</p>
 <p>晚上是趣味賽，題目超多~ 23題分成除蟲題、駭客題、構造題、填空題。  </p>
 <div style="width: 300px; margin: auto"><img src="https://imgur.com/E4ZDDm2.jpg" alt=""></div>
@@ -146,14 +146,14 @@
 <li><p>題目限制不准用time()，結果出題者講完，就被其他講師拆台用邪門歪道可以解掉(鬧)</p>
 <ul>
 <li><p><code>??</code>在c++會被吃成空白，<code>/</code>作為跳脫自元把預設換行吃掉，寫成下面這樣:</p>
-  <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cout</span> &lt;&lt; ti??/</span><br><span class="line">me(<span class="number">0</span>) &lt;&lt; <span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
+  <figure class="highlight c"><figcaption><span>++</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cout</span> &lt;&lt; ti??/</span><br><span class="line">me(<span class="number">0</span>) &lt;&lt; <span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><code>##</code>在define作為concat會把前後字組合起來</p>
   <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> abc ti##me</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
-<li><p><code>&lt;bits/stdc++.h&gt;</code>好用歸好用但有小心使用，例如有題構造題出現<br><code>______r(__a__b(_d___ _*_?_n_[_d__]__n)?_(_*_)__1__.____n__a_);</code>，<br>在引入過程有個奇怪的header也會被引入…那就是<code>&lt;regex&gt;</code>，會把那串誤認成regex function而吃鱉。</p>
+<li><p><code>&lt;bits/stdc++.h&gt;</code>好用歸好用但要小心使用，例如有題構造題出現<br><code>______r(__a__b(_d___ _*_?_n_[_d__]__n)?_(_*_)__1__.____n__a_);</code>，<br>在引入過程有個奇怪的header也會被引入…那就是<code>&lt;regex&gt;</code>，會把那串誤認成regex function而吃鱉。</p>
 </li>
 <li><p>善用模板(e.g. Dinic’s Algorithm <a href="https://github.com/wangyenjen/codebook/blob/master/codes/dinic.cpp" target="_blank" rel="noopener">JAW-codebook</a>)</p>
 </li>
