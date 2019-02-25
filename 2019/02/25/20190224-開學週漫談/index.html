@@ -1,0 +1,121 @@
+<!DOCTYPE html><html lang="zh-TW"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><meta name="author" content="yctseng"><meta name="renderer" content="webkit"><meta name="copyright" content="yctseng"><meta name="keywords" content="yctseng's Blog"><meta name="description" content="關於一些路邊撿到的靈感"><meta name="Cache-Control" content="no-cache"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>【週記】大四下開學週一些漫談 · yctseng's Blog</title><link rel="stylesheet" href="/css/style.css?v=2018.7.9"><link rel="stylesheet" href="/css/animation.css?v=2018.7.9"><link rel="icon" href="/img/assets/favicon.ico"><link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css?version=1.5.6"><!-- scripts--><script>(function( w ){
+  "use strict";
+  // rel=preload support test
+  if( !w.loadCSS ){
+    w.loadCSS = function(){};
+  }
+  // define on the loadCSS obj
+  var rp = loadCSS.relpreload = {};
+  // rel=preload feature support test
+  // runs once and returns a function for compat purposes
+  rp.support = (function(){
+    var ret;
+    try {
+      ret = w.document.createElement( "link" ).relList.supports( "preload" );
+    } catch (e) {
+      ret = false;
+    }
+    return function(){
+      return ret;
+    };
+  })();
+
+  // if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+  // then change that media back to its intended value on load
+  rp.bindMediaToggle = function( link ){
+    // remember existing media attr for ultimate state, or default to 'all'
+    var finalMedia = link.media || "all";
+
+    function enableStylesheet(){
+      link.media = finalMedia;
+    }
+
+    // bind load handlers to enable media
+    if( link.addEventListener ){
+      link.addEventListener( "load", enableStylesheet );
+    } else if( link.attachEvent ){
+      link.attachEvent( "onload", enableStylesheet );
+    }
+
+    // Set rel and non-applicable media type to start an async request
+    // note: timeout allows this to happen async to let rendering continue in IE
+    setTimeout(function(){
+      link.rel = "stylesheet";
+      link.media = "only x";
+    });
+    // also enable media after 3 seconds,
+    // which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+    setTimeout( enableStylesheet, 3000 );
+  };
+
+  // loop through link elements in DOM
+  rp.poly = function(){
+    // double check this to prevent external calls from running
+    if( rp.support() ){
+      return;
+    }
+    var links = w.document.getElementsByTagName( "link" );
+    for( var i = 0; i < links.length; i++ ){
+      var link = links[ i ];
+      // qualify links to those with rel=preload and as=style attrs
+      if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+        // prevent rerunning on link
+        link.setAttribute( "data-loadcss", true );
+        // bind listeners to toggle media back
+        rp.bindMediaToggle( link );
+      }
+    }
+  };
+
+  // if unsupported, run the polyfill
+  if( !rp.support() ){
+    // run once at least
+    rp.poly();
+
+    // rerun poly on an interval until onload
+    var run = w.setInterval( rp.poly, 500 );
+    if( w.addEventListener ){
+      w.addEventListener( "load", function(){
+        rp.poly();
+        w.clearInterval( run );
+      } );
+    } else if( w.attachEvent ){
+      w.attachEvent( "onload", function(){
+        rp.poly();
+        w.clearInterval( run );
+      } );
+    }
+  }
+
+
+  // commonjs
+  if( typeof exports !== "undefined" ){
+    exports.loadCSS = loadCSS;
+  }
+  else {
+    w.loadCSS = loadCSS;
+  }
+}( typeof global !== "undefined" ? global : this ) );</script><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" defer></script><script src="/js/main.js?v=2018.7.9" defer></script><!-- fancybox--><link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script><!-- busuanzi--></head><body><section class="profile-close" id="cxo-profile"><div class="profile-avatar"><i class="fa fa-caret-left"></i><img src="/img/assets/yctseng.png"></div><!--.profile-saying
+  i.fa.fa-comment
+  .saying--><div class="cxo-profile-inner"><div class="profile-name">yctseng</div><div class="profile-signature">有事者，試競程</div><div class="read-progress"></div></div></section><header id="cxo-intro" style="height: 70vh;background-image: url(/img/intro/black_cube.jpg);"><nav id="cxo-intro-nav"><section><div class="intro-nav-title"><a href="/">Journey</a></div><div class="intro-nav-label-box"><a href="/">Home</a><a href="/about/">About</a><a href="/archives/">Archives</a><a href="/tags/">Tags</a></div><i class="fa fa-bars intro-nav-menu"><div class="intro-nav-drop"><a href="/">Home</a><a href="/about/">About</a><a href="/archives/">Archives</a><a href="/tags/">Tags</a></div></i><div class="clear"></div></section></nav><h1 class="post-title">【週記】大四下開學週一些漫談</h1><div class="post-intros"><div class="post-intro-meta"><span class="post-intro-time"><i class="post-intro-calendar fa fa-calendar"></i><span>2019-02-25</span></span></div></div></header><article class="cxo-up" id="cxo-content-outer"><section id="cxo-content-inner"><article class="article-entry" id="post"><p><img src="https://imgur.com/MZConx8.jpg" alt=""></p>
+<p>來到大學最後一學期(理論上)，學分修的跟上學期差不多少 XD<br>附圖是我去 <strong>2019台灣燈會in屏東大鵬灣</strong> 拍的，原諒我渣拍沒辦法拍得很漂亮，還要靠同行友人幫忙。</p>
+<p>這篇算是更新近況，作為生存確認免得被誤會又死去哪兒了 = w =<br> <a id="more"></a></p>
+<p>開學週主要還是旁聽為主。<br>鑑於我大三以及大四上過太爽(?) ，本學期還有兩門領域選修要修。<br>考慮到修點課拿去抵免研究所的學分，勢必還要在挑其他的課程修下去… 然而據了解我在中山資安所和高大的課只有 <strong>計算機結構</strong> 有重疊，讓人有點小遺憾QQ  </p>
+<p>另外值得一提的是我跑去修 應數系大二選修的<strong>演算法實務應用</strong> ，畢竟前兩年一直很想修她系的 <strong>競賽演算法</strong>，結果今年換成劉教授開課了。 一問之下才知道原本開課的黃教授離開高大跑去澳洲了!!! (驚)，怪不得我在競技程式一直視為勁敵的應數系在去年默默地消失了，只能說可惜啊。</p>
+<p>不過這位劉教授也是聽友人推薦的好老師，第一週跑去聽感覺上課風格有對上頻率，而且教的內容也不算難……吧，嗯？怎麼說呢，因為這學期雖然預計會教 <em>enumeration</em> 、 <em>Greedy</em> 、 _DP_ 這種對我來說是罩門的演算法，但教學對象卻是應數系可能連程式底子都不穩的大二生，所以、姑且當作茶餘飯後去聽聽好像也不賴就是了(茶)。</p>
+<p>&nbsp;  </p>
+<hr>
+<p>&nbsp;</p>
+<p>再來就談談台灣燈會了，但老實說燈會好像也沒什麼好講 www<br>可以參考下面這部從空中拍台灣燈會的影片，真的還蠻漂亮的!! (๑•̀ㅂ •́)و ✧  </p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/1DsVrd6F4RU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<p>我自己對燈會印象就是…很多燈、嗯。所以這趟算是陪朋友去<del>看人海</del>，然後利用高雄公車的搭乘優惠想辦法把交通價格壓到最低。雖然說最低，但神人我朋友直接把交通壓到 $20，而且這還是我們平常出門的花費。<br>路線上從高大出發: R55到新左營 → 90到大遠百 → 12到小港機場 → 接駁車到屏東，總花費時間約三小時半，好孩子沒事千萬不要亂學 XDDD  </p>
+<p>比較出乎意料的安排就是… 從小港機場出發的接駁車排隊人潮很可怕，有點讓人回憶起以前去同人展排隊的盛況，大約排了40 min，而且這還是隔天要補班補課的平日，很難想像下週228連假的人潮會有多可怕 -w-</p>
+<p>在會場內拍了幾張，有些作品真的蠻ㄎㄧㄤder (感謝同行友人幫拍）</p>
+<div align="center"><br><img src="https://imgur.com/1nffvlp.jpg" height="300px"><br><img src="https://imgur.com/d0gcIsS.jpg" height="300px"><br><img src="https://imgur.com/DjBgBq4.jpg" height="300px"><br><img src="https://imgur.com/uYtLxFw.jpg" height="300px"><br><img src="https://imgur.com/melfpJd.jpg" height="300px"><br><img src="https://imgur.com/muQuOhu.jpg" height="300px"><br></div>
+
+
+<p>然後在美食區找了胡椒餅來吃，點了起司口味真的超讚der 還可以牽絲ㄛ<br>最後是水幕秀… 看看那隻魚上面壯哉我大中華電信，真的有夠顯眼www</p>
+<p><img src="https://imgur.com/uw9ki2K.jpg" alt=""></p>
+<p>嗯、大概就是這樣。<br>平常不太會逛這類的展所以擠不出心得就別為難我了 QwQ</p>
+<div style="width: 168px; margin: auto"><img src="/imges/end.png" alt=""></div></article><!-- lincense--><div class="post-paginator"><a class="nextSlogan" href="/2019/02/10/20190210-ioicamp2019心得/" title="【分享】IOI Camp 2019 一些O(1)的心得"><span>NextPost ></span><br><span class="nextTitle">【分享】IOI Camp 2019 一些O(1)的心得</span></a><div class="clear"></div></div><div id="comment"></div></section></article><footer id="cxo-footer-outer"><div id="cxo-footer-inner"><p class="footer-container"><span>Site by </span><a href="http://hexo.io"><span>Hexo</span></a><span> | theme </span><a href="https://github.com/Longlongyu/hexo-theme-Cxo"><span>Cxo</span></a></p></div></footer><!-- catelog--><div class="toc-wrapper" style="top: 70vh;"><div class="toc-catalog"><i class="fa fa-list"> </i><span>CATALOG</span></div></div><!-- top--><i class="fa fa-arrow-up close" id="go-up" aria-hidden="true"></i></body></html>
