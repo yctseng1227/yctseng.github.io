@@ -1,103 +1,402 @@
-<!DOCTYPE html><html lang="zh-TW"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><meta name="author" content="yctseng"><meta name="renderer" content="webkit"><meta name="copyright" content="yctseng"><meta name="keywords" content="yctseng's Blog"><meta name="description" content="關於一些路邊撿到的靈感"><meta name="Cache-Control" content="no-cache"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>【週記】開學週漫談 · yctseng's Blog</title><link rel="stylesheet" href="/css/style.css?v=2018.7.9"><link rel="stylesheet" href="/css/animation.css?v=2018.7.9"><link rel="icon" href="/img/assets/favicon.ico"><link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css?version=1.5.6"><!-- scripts--><script>(function( w ){
-  "use strict";
-  // rel=preload support test
-  if( !w.loadCSS ){
-    w.loadCSS = function(){};
-  }
-  // define on the loadCSS obj
-  var rp = loadCSS.relpreload = {};
-  // rel=preload feature support test
-  // runs once and returns a function for compat purposes
-  rp.support = (function(){
-    var ret;
-    try {
-      ret = w.document.createElement( "link" ).relList.supports( "preload" );
-    } catch (e) {
-      ret = false;
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-TW">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.1.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
-    return function(){
-      return ret;
-    };
-  })();
-
-  // if preload isn't supported, get an asynchronous load by using a non-matching media attribute
-  // then change that media back to its intended value on load
-  rp.bindMediaToggle = function( link ){
-    // remember existing media attr for ultimate state, or default to 'all'
-    var finalMedia = link.media || "all";
-
-    function enableStylesheet(){
-      link.media = finalMedia;
-    }
-
-    // bind load handlers to enable media
-    if( link.addEventListener ){
-      link.addEventListener( "load", enableStylesheet );
-    } else if( link.attachEvent ){
-      link.attachEvent( "onload", enableStylesheet );
-    }
-
-    // Set rel and non-applicable media type to start an async request
-    // note: timeout allows this to happen async to let rendering continue in IE
-    setTimeout(function(){
-      link.rel = "stylesheet";
-      link.media = "only x";
-    });
-    // also enable media after 3 seconds,
-    // which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
-    setTimeout( enableStylesheet, 3000 );
   };
+</script>
 
-  // loop through link elements in DOM
-  rp.poly = function(){
-    // double check this to prevent external calls from running
-    if( rp.support() ){
-      return;
-    }
-    var links = w.document.getElementsByTagName( "link" );
-    for( var i = 0; i < links.length; i++ ){
-      var link = links[ i ];
-      // qualify links to those with rel=preload and as=style attrs
-      if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
-        // prevent rerunning on link
-        link.setAttribute( "data-loadcss", true );
-        // bind listeners to toggle media back
-        rp.bindMediaToggle( link );
-      }
-    }
+
+  
+
+
+
+
+  <meta name="description" content="來到大學最後一學期(理論上)，學分修的跟上學期差不多少 XD附圖是我去 2019台灣燈會in屏東大鵬灣 拍的，原諒我渣攝還要靠同行友人幫忙拍。 這篇算是更新近況，作為生存確認免得被誤會又死去哪兒了 = w =">
+<meta name="keywords" content="生活札記">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【週記】開學週漫談">
+<meta property="og:url" content="https://yctseng1227.github.io/2019/02/25/20190224-開學週漫談/index.html">
+<meta property="og:site_name" content="yctseng&#39;s Blog">
+<meta property="og:description" content="來到大學最後一學期(理論上)，學分修的跟上學期差不多少 XD附圖是我去 2019台灣燈會in屏東大鵬灣 拍的，原諒我渣攝還要靠同行友人幫忙拍。 這篇算是更新近況，作為生存確認免得被誤會又死去哪兒了 = w =">
+<meta property="og:locale" content="zh-TW">
+<meta property="og:image" content="https://imgur.com/Jqz1atE.jpg">
+<meta property="og:image" content="https://imgur.com/MZConx8.jpg">
+<meta property="og:image" content="https://imgur.com/eOoc2Ld.png">
+<meta property="og:image" content="https://imgur.com/5s9KAha.png">
+<meta property="og:image" content="https://imgur.com/zmamv4l.png">
+<meta property="og:image" content="https://imgur.com/uw9ki2K.jpg">
+<meta property="og:image" content="https://yctseng1227.github.io/imges/end.png">
+<meta property="og:updated_time" content="2019-03-10T17:26:13.914Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="【週記】開學週漫談">
+<meta name="twitter:description" content="來到大學最後一學期(理論上)，學分修的跟上學期差不多少 XD附圖是我去 2019台灣燈會in屏東大鵬灣 拍的，原諒我渣攝還要靠同行友人幫忙拍。 這篇算是更新近況，作為生存確認免得被誤會又死去哪兒了 = w =">
+<meta name="twitter:image" content="https://imgur.com/Jqz1atE.jpg">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="https://yctseng1227.github.io/2019/02/25/20190224-開學週漫談/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
   };
+</script>
 
-  // if unsupported, run the polyfill
-  if( !rp.support() ){
-    // run once at least
-    rp.poly();
+  <title>【週記】開學週漫談 | yctseng's Blog</title>
+  
 
-    // rerun poly on an interval until onload
-    var run = w.setInterval( rp.poly, 500 );
-    if( w.addEventListener ){
-      w.addEventListener( "load", function(){
-        rp.poly();
-        w.clearInterval( run );
-      } );
-    } else if( w.attachEvent ){
-      w.attachEvent( "onload", function(){
-        rp.poly();
-        w.clearInterval( run );
-      } );
-    }
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
   }
 
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
 
-  // commonjs
-  if( typeof exports !== "undefined" ){
-    exports.loadCSS = loadCSS;
-  }
-  else {
-    w.loadCSS = loadCSS;
-  }
-}( typeof global !== "undefined" ? global : this ) );</script><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" defer></script><script src="/js/main.js?v=2018.7.9" defer></script><!-- fancybox--><link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script><!-- busuanzi--></head><body><section class="profile-close" id="cxo-profile"><div class="profile-avatar"><i class="fa fa-caret-left"></i><img src="/img/assets/yctseng.png"></div><!--.profile-saying
-  i.fa.fa-comment
-  .saying--><div class="cxo-profile-inner"><div class="profile-name">yctseng</div><div class="profile-signature">有事者，試競程</div><div class="read-progress"></div></div></section><header id="cxo-intro" style="height: 70vh;background-image: url(/img/intro/black_cube.jpg);"><nav id="cxo-intro-nav"><section><div class="intro-nav-title"><a href="/">Journey</a></div><div class="intro-nav-label-box"><a href="/">Home</a><a href="/about/">About</a><a href="/archives/">Archives</a><a href="/tags/">Tags</a></div><i class="fa fa-bars intro-nav-menu"><div class="intro-nav-drop"><a href="/">Home</a><a href="/about/">About</a><a href="/archives/">Archives</a><a href="/tags/">Tags</a></div></i><div class="clear"></div></section></nav><h1 class="post-title">【週記】開學週漫談</h1><div class="post-intros"><div class="post-intro-meta"><span class="post-intro-time"><i class="post-intro-calendar fa fa-calendar"></i><span>2019-02-25</span></span><span class="post-intro-tags"><a class="intro-tag fa fa-tag" href="javascript:void(0)" date-tags="生活札記"> 生活札記</a></span></div></div></header><article class="cxo-up" id="cxo-content-outer"><section id="cxo-content-inner"><article class="article-entry" id="post"><p><img src="https://imgur.com/Jqz1atE.jpg" alt=""></p>
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-TW">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">yctseng's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Journey</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切換導航欄">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首頁</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>歸檔</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://yctseng1227.github.io/2019/02/25/20190224-開學週漫談/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yctseng">
+      <meta itemprop="description" content="關於一些路邊撿到的靈感">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="yctseng's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">【週記】開學週漫談
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+
+              
+                
+              
+
+              <time title="創建時間：2019-02-25 16:13:42" itemprop="dateCreated datePublished" datetime="2019-02-25T16:13:42+08:00">2019-02-25</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新於</span>
+                
+                <time title="修改時間：2019-03-11 01:26:13" itemprop="dateModified" datetime="2019-03-11T01:26:13+08:00">2019-03-11</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="https://imgur.com/Jqz1atE.jpg" alt=""></p>
 <p>來到大學最後一學期(理論上)，學分修的跟上學期差不多少 XD<br>附圖是我去 <strong>2019台灣燈會in屏東大鵬灣</strong> 拍的，原諒我渣攝還要靠同行友人幫忙拍。</p>
 <p>這篇算是更新近況，作為生存確認免得被誤會又死去哪兒了 = w =<br> <a id="more"></a></p>
 <p>開學週主要還是旁聽為主。<br>鑑於我大三以及大四上過太爽(?) ，本學期還有兩門領域選修要修。<br>考慮到修點課拿去抵免研究所的學分，勢必還要在挑其他的課程修下去… 然而據了解我在中山資安所和高大的課只有 <strong>計算機結構</strong> 有重疊，讓人有點小遺憾QQ  </p>
@@ -119,4 +418,349 @@
 <p>然後在美食區找了胡椒餅來吃，點了起司口味真的超讚der 還可以牽絲ㄛ<br>最後是水幕秀… 看看那隻魚上面壯哉我大中華電信，真的有夠顯眼www</p>
 <p><img src="https://imgur.com/uw9ki2K.jpg" alt=""></p>
 <p>嗯、大概就是這樣。<br>平常不太會逛這類的展所以擠不出心得就別為難我了 QwQ</p>
-<div style="width: 168px; margin: auto"><img src="/imges/end.png" alt=""></div></article><!-- lincense--><div class="post-paginator"><a class="prevSlogan" href="/2019/03/10/20190311-好像踢到奇怪的盒子(5Z)/" title="【週記】咦？好像踢到奇怪的盒子..."><span>< PreviousPost</span><br><span class="prevTitle">【週記】咦？好像踢到奇怪的盒子...</span></a><a class="nextSlogan" href="/2019/02/10/20190210-ioicamp2019心得/" title="【分享】IOI Camp 2019 一些O(1)的心得"><span>NextPost ></span><br><span class="nextTitle">【分享】IOI Camp 2019 一些O(1)的心得</span></a><div class="clear"></div></div><div id="comment"></div></section></article><footer id="cxo-footer-outer"><div id="cxo-footer-inner"><p class="footer-container"><span>Site by </span><a href="http://hexo.io"><span>Hexo</span></a><span> | theme </span><a href="https://github.com/Longlongyu/hexo-theme-Cxo"><span>Cxo</span></a></p></div></footer><!-- catelog--><div class="toc-wrapper" style="top: 70vh;"><div class="toc-catalog"><i class="fa fa-list"> </i><span>CATALOG</span></div></div><!-- top--><i class="fa fa-arrow-up close" id="go-up" aria-hidden="true"></i></body></html>
+<div style="width: 168px; margin: auto"><img src="/imges/end.png" alt=""></div>
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/生活札記/" rel="tag"># 生活札記</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/02/10/20190210-ioicamp2019心得/" rel="next" title="【分享】IOI Camp 2019 一些O(1)的心得">
+                <i class="fa fa-chevron-left"></i> 【分享】IOI Camp 2019 一些O(1)的心得
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/10/20190311-好像踢到奇怪的盒子(5Z)/" rel="prev" title="【週記】咦？好像踢到奇怪的盒子...">
+                【週記】咦？好像踢到奇怪的盒子... <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">yctseng</p>
+              <div class="site-description motion-element" itemprop="description">關於一些路邊撿到的靈感</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">文章</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">標籤</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">yctseng</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 強力驅動 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主題 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.1.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.0"></script>
+
+  <script src="/js/motion.js?v=7.1.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.0"></script>
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.0"></script>
+<script src="/js/post-details.js?v=7.1.0"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.0"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
