@@ -1726,9 +1726,6 @@ pre .javascript .function {
   opacity: 1;
 }
 .site-author-image {
-  border-radius: 100%;
-}
-.site-author-image {
   transition: transform 1s ease-out;
 }
 .site-author-image:hover {
@@ -1767,7 +1764,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #fffffa;
+  background: #7f1bdf;
 }
 .feed-link,
 .chat {
