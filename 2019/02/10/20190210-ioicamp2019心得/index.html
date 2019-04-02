@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-TW">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.0">
+
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-tail.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-tail.png?v=7.1.0">
+
+
+  <link rel="mask-icon" href="/images/tail.svg?v=7.1.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.1.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: true,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="所謂的 IOI Camp 就是”程式解題競賽集訓營”，由一群台大資工學生負責主辦的訓練營。由於營隊期間網路上出現了 Fibonacci number 只需要 $O(1)$ 如此神奇的言論，現場學員都是圈內人自然就討論得相當熱烈，講師偶爾都還會拿出來消遣一下 XDDDD">
+<meta name="keywords" content="程式競賽,ioicamp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【分享】IOI Camp 2019 一些O(1)的心得">
+<meta property="og:url" content="https://yctseng1227.github.io/2019/02/10/20190210-ioicamp2019心得/index.html">
+<meta property="og:site_name" content="yctseng&#39;s Blog">
+<meta property="og:description" content="所謂的 IOI Camp 就是”程式解題競賽集訓營”，由一群台大資工學生負責主辦的訓練營。由於營隊期間網路上出現了 Fibonacci number 只需要 $O(1)$ 如此神奇的言論，現場學員都是圈內人自然就討論得相當熱烈，講師偶爾都還會拿出來消遣一下 XDDDD">
+<meta property="og:locale" content="zh-TW">
+<meta property="og:image" content="https://imgur.com/VT0C73f.jpg">
+<meta property="og:image" content="https://imgur.com/FNVkFW5.jpg">
+<meta property="og:image" content="https://imgur.com/E4ZDDm2.jpg">
+<meta property="og:image" content="https://imgur.com/B9Ik34D.jpg">
+<meta property="og:image" content="https://imgur.com/hXYbNHu.jpg">
+<meta property="og:image" content="https://imgur.com/rECyuCN.jpg">
+<meta property="og:image" content="https://imgur.com/aJc7bgf.jpg">
+<meta property="og:image" content="https://imgur.com/0htjOll.jpg">
+<meta property="og:image" content="https://imgur.com/AcLUasF.jpg">
+<meta property="og:image" content="https://imgur.com/YSlqFAj.jpg">
+<meta property="og:image" content="https://imgur.com/pZc9JPt.jpg">
+<meta property="og:image" content="https://yctseng1227.github.io/imges/end.png">
+<meta property="og:updated_time" content="2019-02-10T21:33:17.659Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="【分享】IOI Camp 2019 一些O(1)的心得">
+<meta name="twitter:description" content="所謂的 IOI Camp 就是”程式解題競賽集訓營”，由一群台大資工學生負責主辦的訓練營。由於營隊期間網路上出現了 Fibonacci number 只需要 $O(1)$ 如此神奇的言論，現場學員都是圈內人自然就討論得相當熱烈，講師偶爾都還會拿出來消遣一下 XDDDD">
+<meta name="twitter:image" content="https://imgur.com/VT0C73f.jpg">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="https://yctseng1227.github.io/2019/02/10/20190210-ioicamp2019心得/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>【分享】IOI Camp 2019 一些O(1)的心得 | yctseng's Blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-TW">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">yctseng's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Journey</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切換導航欄">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首頁</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>歸檔</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://yctseng1227.github.io/2019/02/10/20190210-ioicamp2019心得/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yctseng">
+      <meta itemprop="description" content="關於一些路邊撿到的靈感">
+      <meta itemprop="image" content="/images/yctseng.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="yctseng's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">【分享】IOI Camp 2019 一些O(1)的心得
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+
+              
+                
+              
+
+              <time title="創建時間：2019-02-10 05:02:39" itemprop="dateCreated datePublished" datetime="2019-02-10T05:02:39+08:00">2019-02-10</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新於</span>
+                
+                <time title="修改時間：2019-02-11 05:33:17" itemprop="dateModified" datetime="2019-02-11T05:33:17+08:00">2019-02-11</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="https://imgur.com/VT0C73f.jpg" alt=""></p>
+<p>所謂的 IOI Camp 就是”程式解題競賽集訓營”，由一群台大資工學生負責主辦的訓練營。<br>由於營隊期間網路上出現了 Fibonacci number 只需要 $O(1)$ 如此神奇的言論，現場學員都是圈內人自然就討論得相當熱烈，講師偶爾都還會拿出來消遣一下 XDDDD<br><!-- source: https://imgur.com/a/NJyPaGW?fbclid=IwAR17W5tw0dbLCHzBO2n3rPzio7tWZdbAtf5c5uaZ5SQ-qzbcREhSZ5E-lJw --></p>
+<a id="more"></a>
+<p>時間過得真快，五天的營期(1/28-2/01)一下子就結束了呢~<br>雖然是台大主辦的解題訓練營，但據說參加的70位學員中有5x位是”國高中生” …對你沒聽錯，還有國中生(抖)，而且各個實力堅強，在一些閒話家常中聽到來自不同領域的國手，包括數奧、資奧、甚至還有物奧，讓我回想起高中時代都在考卷堆中玩沙的日子，不禁想到這些擁有國手背景的高中看到的事物應該都不太一樣吧 : )</p>
+<p>說實在，這次參加營隊看到參加學員一位比一位兇殘，讓我不禁懷疑自己是不是跑錯場了，嗯、事後證明我真的跑錯場了(掩面)。 而主辦方方面，自然都是台大資工人居多，而且還不少在程式競賽常看到的熟面孔，當然、這裡指的是在臺上領獎的常勝軍，那些不認識都難的等級www 總召更是去年ACM Taipei的隸屬於隊號1的”JAW”，有點像是報名營隊見見神人的感覺XDDD </p>
+<p>這次有個小遺憾，那就是我感冒了QQ<br>我在營隊前一週就提早上台北，可能是溫差太大導致喉嚨就有點不舒服，結果反而太早去掛號看醫生，有些鼻塞、咳嗽都是隔天才發生，然後就一路咳到營隊結束都還沒好嗚嗚，對當時坐在身邊的學員感到抱歉 &lt;(_ _)&gt;</p>
+<p>本次競賽使用的online judge是用 TIOJ，看得出營隊期間工人們都有在用心維護，有趣的是暱稱還可以用latex語法修改，所以看得到各種神奇的ID，各種玩上下標、顏色等等的公式梗。</p>
+<p>下面就大概就概分五天簡單描述一下心得，至於課程內容我希望能簡單整理一份Note，算是作為高大競程一員去IOI Camp取經 (´・ω・`)</p>
+<p>混了一張結業證書，然而這都是假象 ᕕ ( ᐛ ) ᕗ<br><img src="https://imgur.com/FNVkFW5.jpg" alt=""></p>
+<hr>
+<h3 id="Day-1"><a href="#Day-1" class="headerlink" title="Day 1"></a>Day 1</h3><p>報到。<br>因為在進大學前的暑假我有去台大資工系館「德田館」上過幾次課，所以路線上不算陌生，報到稍微瞄過參加學員的名單…嗯 高大沒有人報上呢。雖然聽說有幾位學弟有報名，但似乎報名人數超乎預期還是沒成功進camp，另外唯一認識的就只有前中央霸主宇航哥，感覺他在競程的等級應該遠超過這次camp，所以合理懷疑是來拆台的(O)。</p>
+<p>然後看著一群不認識的學員在互相認親，事後看FB心得才曉得原來很多高中生學員早在 IMO 或是 TOI 之類的場合就認識了，覺得自己被孤立只好硬著頭皮找旁邊的學員搭話0.0  </p>
+<p>OK, 我的團體賽的隊友是一位清大的大四生+實中的高一生，簡單介紹一下:<br>高一的同學很沈默，這幾天下來也看他一直在刷codeforces的題庫，努力聊一下才曉得他去年九月才接觸程式競賽，不過他的Rating比我高很多，程度進步到讓我hen害怕。<br>另一位清大生是位高手，團體賽靠他排名很前面，另外他似乎坐不住，時不時就突然消失跑到教室外面閒晃，常常去廁所的路上都會碰到XDDDD</p>
+<hr>
+<p>上午是<strong><a href="https://hackmd.io/p/ry1P-slfV#/" target="_blank" rel="noopener">Eddy時間</a></strong>，算是朝聖codeforces紅人，畢竟他在我的追蹤清單內算出盡風頭(?)<br>從他的競賽經歷分享聽到不少有趣的事，附上我當下的筆記可以參考看看~</p>
+<p>下午是<strong><a href="https://docs.google.com/presentation/d/1cI-kglF4zU8RKK8or3M11PlrqO5STB19HVNkIZ-yweQ/edit#slide=id.p" target="_blank" rel="noopener">組合賽局</a></strong>，自然又再一次提到Nim，讓我想起2016年參加交大PCCA寒訓的第一堂課，講到理論就是看台下各種硬撐(頭痛)，從之後的練習題稍稍有抓到一點感覺，但大部分的題目還是推不出來啊…慘。</p>
+<p>晚上是趣味賽，題目超多~ 23題分成除蟲題、駭客題、構造題、填空題。  </p>
+<div style="width: 300px; margin: auto"><img src="https://imgur.com/E4ZDDm2.jpg" alt=""></div>
+
+<p>不得不說出題方面很用心，從一些除蟲題可以感受到命題者的惡意(X) 親身經歷(O)，還要求在edit distance的指定字數內完成修改。重點是有追加EX難度，也就是把題目設計和原題相同，但指定字數會隨著隊伍的最佳解再Rejudge，甚至逼到工人下場跟著打XDDD 像是pU遞增路徑應該rejudge有6,7次了吧，還有一題的edit distance從4字元一路下修成2字元，最後變1字元實在太神啦www</p>
+<p>其中pI &amp; pJ有讓我驚訝到，是個轉置矩陣的除蟲題(noraml &amp; EX)。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[<span class="number">3636</span>][<span class="number">3636</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n; <span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">    <span class="keyword">int</span> sum=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;++i)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;n;++j)&#123;</span><br><span class="line">            <span class="built_in">cin</span>&gt;&gt;a[i][j];</span><br><span class="line">            sum+=a[i][j];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;++i)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;n;++j)&#123;</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;a[j][i]&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;sum&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>sample code 看起來完全沒有問題，畢竟只是簡單的 <code>i</code>,<code>j</code> 互換輸出，但全場這題的TLE數卻相當可怕，試過<code>cin.tie()</code>加速或是陣列倒存後原本也是要放棄的，我索性看看隊友其他AC的題目，然後發現某個除蟲題要把<code>#define</code>內的<code>int8_t</code>改成<code>int16_t</code>，所以我就嘗試把陣列改成<code>int16_t</code>居然意外壓線AC。<br>最後題解是因為<code>int</code>(<code>int32_t</code>)的<code>3636*3636 array</code>剛好卡在memory上限，導致輸入無論是<code>cin</code>還是<code>scanf</code>都會爛掉，在不曉得吃了鬼什麼的情況下就會持續跑到TLE，藉由改成<code>short</code>(<code>int16_t</code>)壓低memory，讓我一整個覺得很神奇!!!</p>
+<p><img src="https://imgur.com/B9Ik34D.jpg" alt=""></p>
+<p>最後 兩位隊友很carry，第一天團賽 11’AC、Rk’9 收場。<br>22點結束、23點到家，真的累 Orz</p>
+<hr>
+<h3 id="Day-2"><a href="#Day-2" class="headerlink" title="Day 2"></a>Day 2</h3><p>上午是<strong><a href="https://github.com/bobogei81123/ioi2019slide" target="_blank" rel="noopener">數學</a></strong>，講師不得不說真的很有趣XD<br>開場的視力檢查真的快笑死，一開始拿 <code>&lt;</code>、<code>ㄩ</code> 來問開口方向就算了，後面跑出<code>∈</code>、<code>≶</code>、<code>＊</code>真的很鬧，還有一分鐘找快速冪的10個bug，結果最後有藏全形空白，笑死XD</p>
+<p>主要講了很多關於數學的想法，數論的部分原本講到<code>CRT(中國剩餘定理)</code>﹑<code>Euler&#39;s formula</code> 我還算是勉強可以理解，畢竟是競賽常會碰到的題目，但之後冒出什麼卷積解離散傅立葉轉換、FFT 就真的不太行了…回憶起工數的惡夢www 讓我不禁嚴重懷疑在場的高中生們究竟有多少人聽得懂呢（思）。  </p>
+<p>下午是<strong><a href="https://t1016d.github.io/ioicamp-2019-graph-slides/#/" target="_blank" rel="noopener">圖論</a></strong>，在camp開始前的預備知識就已經要有<code>DFS</code>和<code>BFS</code>的知識，所以開場講師補充幾個DFS的 <code>tree edge</code>、<code>back edge</code>、<code>forward edge</code>、<code>cross edge</code> 後就直接開始介紹<code>BCC(無向圖的雙連通)</code> &amp; <code>SCC(有向圖的強連通)</code>開始講，然後認識了<code>TARJAN</code>這個找割點的演算法，對於我這種圖論極慘的人好像有那麼…一點點的幫助(?) 不過後段講師有分享幾個經典問題都蠻印象深刻，例如 著色問題、2-SAT(我以前還嘗試用很多層loop硬爆XD)、一筆畫問題(<code>Hamiltonian path</code>)。</p>
+<p>晚上是個人賽，我這三個小時寫到連助教都來關心，掛蛋真的太丟臉了QQ<br>但是那個pA的陷阱也太多了逆，給N個邊詢問是否可以湊成N邊形，<strong>可以輸出NO/不可以輸出YES</strong>，還在不明講的前提下給了一個input的驗證測試（如下code），簡單講測出來的結果就是輸入不一定是整數…有浮點數甚至還有負數wwwwww 心機hen重ˋ^ˊ</p>
+<p>下面code表示出現數字九個以上就成立，但出題範圍只有到1000 &gt;&gt;&gt;&gt; 表示有浮點數可能。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t; <span class="built_in">cin</span> &gt;&gt; t; assert(t == <span class="number">1</span> || t == <span class="number">37</span>); <span class="keyword">while</span> (t--) &#123;</span><br><span class="line">        <span class="keyword">int</span> n; <span class="built_in">cin</span> &gt;&gt; n; assert(<span class="number">3</span> &lt;= n &amp;&amp; n &lt;= <span class="number">100000</span>);</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; v(n);</span><br><span class="line">        for_each(v.begin(), v.end(), [](<span class="keyword">int</span> x)&#123; <span class="built_in">string</span> s; <span class="built_in">cin</span> &gt;&gt; s; assert(accumulate(s.begin(), s.end(), <span class="number">0</span>, [](<span class="keyword">int</span> a, <span class="keyword">char</span> c) -&gt; <span class="keyword">int</span> &#123; <span class="keyword">return</span> a + <span class="built_in">isdigit</span>(c); &#125;) &lt;= <span class="number">9</span>);&#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="number">0</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>掛蛋自然就倒數那幾名，不放Dashboard獻醜了。<br>學到東西比較重要（但好像也沒學到多少XDDD）</p>
+<hr>
+<h3 id="Day-3"><a href="#Day-3" class="headerlink" title="Day 3"></a>Day 3</h3><p>上午是<strong><a href="https://hackmd.io/p/HJNs5ohmN#/" target="_blank" rel="noopener">資料結構</a></strong>，由總召大人擔任講師，不得不說課程內容和我以往接觸的資料結構差蠻大的，當初報名前看到預備知識包含 <code>queue</code>,<code>stack</code>,<code>DFS</code>,<code>segment tree</code>,<code>hash</code>,<code>分塊</code>,<code>Treap</code>,<code>BIT(Binary Indexed Tree)</code>,<code>二分搜</code> 真的有嚇到，事實上從線段樹開始就已經不是我認識的資結了，僅限於聽過看過但還是不會用的樹 XDDD  </p>
+<p>課程集中在線段樹 &amp; 切塊 &amp; 分治，一路聽下來其實概念都不難，甚至還蠻有趣的(?)，只是平常光是一般的tree都寫得亂七八糟，練習賽要把搜尋的概念應用在題目還是挺困難的，像是有個很經典的區間眾數(如下)，如果用平常的思維寫下去應該 TLE 八九不離十，線段樹好強大&gt; &lt;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">給定一個序列 $S_1 , \ldots , S_N$，接著有$Q$組詢問，</span><br><span class="line">每次詢問$[L_i, R_i]$出現最多的數字出現幾次。</span><br><span class="line"></span><br><span class="line">$(1 \le N,Q \le 10^5)$</span><br></pre></td></tr></table></figure>
+<p>下午沒有課程，直接團賽開打！<br>這回我就真的都在打醬油了，隊友太給力沒機會寫XDD 頂多幫忙讀長篇題目再講做法(某osu!題目計分題)，另外值得一提的是總召出了一題如下，完全沒人想碰www 之後才知道要用13個DP解，幹！（嫌棄XD </p>
+<p><img src="https://imgur.com/hXYbNHu.jpg" alt=""></p>
+<p>晚上是題解時間，也就是這三天趣味賽、個人賽、團體賽的解說。<br>每個出題者都輪流上台解釋，從每個字裡行間不難看出他們的用心！而且還聽到了不少小知識，下面就簡單列出幾點~</p>
+<ul>
+<li>有些需要大量mod數字建議常數改成const減少<code>%</code>的速度</li>
+<li>call by value &amp; call by reference 注意</li>
+<li>Day 1 提過 若array卡在memory上限可能會TLE</li>
+<li>駭客題解法: 1.認真看code 2.寫對拍程式測試</li>
+<li>善用srand的技巧可以hack (e.g. 生日悖論)</li>
+<li><p>題目限制不准用time()，結果出題者講完，就被其他講師拆台用邪門歪道可以解掉(鬧)</p>
+<ul>
+<li><p><code>??</code>在c++會被吃成空白，<code>/</code>作為跳脫自元把預設換行吃掉，寫成下面這樣:</p>
+  <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cout</span> &lt;&lt; ti??/</span><br><span class="line">me(<span class="number">0</span>) &lt;&lt; <span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>- `##`在define作為concat會把前後字組合起來
+
+    <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> abc ti##me</span></span><br></pre></td></tr></table></figure>
+</code></pre><ul>
+<li><code>&lt;bits/stdc++.h&gt;</code>好用歸好用但要小心使用，例如有題構造題出現<br><code>______r(__a__b(_d___ _*_?_n_[_d__]__n)?_(_*_)__1__.____n__a_);</code>，<br>在引入過程有個奇怪的header也會被引入…那就是<code>&lt;regex&gt;</code>，會把那串誤認成regex function而吃鱉。</li>
+<li><p>善用模板(e.g. Dinic’s Algorithm <a href="https://github.com/wangyenjen/codebook/blob/master/codes/dinic.cpp" target="_blank" rel="noopener">JAW-codebook</a>)</p>
+</li>
+<li><p>其他還有很多技巧，只是可能要搭配題目比較好懂就不贅述了~</p>
+</li>
+</ul>
+<p>照慣例附上 Day 3 團體賽的成績，兩位隊友依舊carry，以 5’AC、Rk’2 收場。<br><img src="https://imgur.com/rECyuCN.jpg" alt=""></p>
+<hr>
+<h3 id="Day-4"><a href="#Day-4" class="headerlink" title="Day 4"></a>Day 4</h3><p>上午是<strong><a href="https://docs.google.com/presentation/d/1PMQ2-dHqmP5uohV-j19J7zGQoKFEdKQKwWskXka3muY/edit?fbclid=IwAR0QhMCSI0WbT2x9lH0oi-izVbYQV5y8lkjNkk7jJLXFCiTUzXT2BgBeTXQ#slide=id.p" target="_blank" rel="noopener">網路流Flow</a></strong>，聽完才發現其實有不少題目可以用flow解掉(前提要先想到是flow)，而且我的graph非常有障礙，只能靠刷些裸題練練。課程內容不外乎是一些競賽會看到的<code>最小割(Minimum Cut)</code>、<code>最大流(Maximum Flow)</code>、<code>最小點覆蓋</code>…etc，然而不意外都會被我跳過不敢碰，下次也許可以嘗試寫寫看！</p>
+<p>下午是<strong><a href="https://drive.google.com/file/d/1lBm4j__BKemyCtG3kmhOPMQOe79q-wT4/view?fbclid=IwAR0IV6oTlATwXRUUHMTKPedt6xkke1mHZuQ9gPqr8kLnUxztywe07Ys2ejE" target="_blank" rel="noopener">動態規劃</a></strong>，也是我一直以來的罩門。講師從基礎開始講，甚至連專有名詞都講，讓我非常感謝！</p>
+<ul>
+<li>狀態 (n.):子問題、其形式與定義</li>
+<li>轉移 (v.):從子問題的答案計算原問題答案</li>
+<li>轉移 (n.):轉移的這個動作或方法</li>
+<li>滾動 :簡單來說就是把不會再被轉移的狀態丟掉,重複利用空間</li>
+</ul>
+<p>不過後段就開始飆車了XD 分配上大概是兩小時基礎、一小時進階的概念，後段的證明完全無法聽進腦袋內，一直認為 DP 跟 greedy 是很吃感覺的演算法，如今也是只能刷題拼感覺了(?)。</p>
+<p>另外這天的晚餐不同於之前的便當，居然是pizza + KFC！<br>感覺這類的營隊最後一餐都吃得特別好，應該是慣例了XD</p>
+<p>晚上是個人賽… 嗯、除了pA時事題送分，之後就完全無解。<br>事實上Dashboard也很慘，只有14人寫出2’AC以上，最高還只有4’AC(全部8題)<br>也是一樣太爛就不放上來獻醜啦www 這幾天以來感受到精神上的疲倦了(#</p>
+<p>另外有個小插曲是關於Day1~Day4問卷調查，結果有人似乎填了神奇的喵喵語，總召還特地拿出來翻(ㄒㄧㄚ)譯(ㄅㄞ)，真的快笑死w<br><img src="https://imgur.com/aJc7bgf.jpg" alt=""></p>
+<hr>
+<h3 id="Day-5"><a href="#Day-5" class="headerlink" title="Day 5"></a>Day 5</h3><p>最後一天的營隊。<br>一種名人見面會的概念，繼Day 1見到 eddy 後就是這天的講師 dreamoon ，兩位都是codeforces上厲害的臺灣coder，這天上午教的是<strong><a href="https://hackmd.io/5ZKjZzGrSM2K13XPzaJLIw" target="_blank" rel="noopener">從枚舉到K短路</a></strong>。</p>
+<p>開場就在曬女友，不得不說打程式競賽打到有女朋友實在很令人羨慕啊，但連codeforces的handle都改loveXX實在太閃啦QQ 課程內容比起講義上的東西，聽到更多競賽經歷，但其實簡單講就是暴搜，結果看到投影片出現了我在 <strong><a href="https://www.facebook.com/TaiwanCompetitiveProgrammingBlog/" target="_blank" rel="noopener">競程日記@FB</a></strong> 寫的爛code被dreamoon拿出來鞭屍XDDDDD 回憶起當時為了拼AC直接硬爆15層for loop，寫完真的頭hen痛，如今用遞迴跑就簡單許多(嘆)。</p>
+<p>下午拍完大合照就是final團體正式賽了(5hr)，還有亂入一隊工作人員隊「utaha」真的很刺激(?)<br>原本有一題看起來可以用字串反轉LCS的，結果我寫完發現隊友已經AC掉了…之後就真的躺到底QQ 反而高一隊友還解了2,3題(像是關鍵的nim變形)，其他都是清大生寫掉，猛!!<br>其中有個物理的電學看到傻眼，腦袋開始回憶自己高中物理到底學了什麼公式，結果還現場重新推一遍頭痛，最後聽隊友用x,y分力算總和就行了= =a</p>
+<p>雖然不是第一次打5hr的競賽，但我精神上還是很累(即便我躺得很兇)，外頭的把廢實在是精神糧食，真的很好吃，不信放圖片給你看（扔</p>
+<p><img src="https://imgur.com/0htjOll.jpg" alt=""></p>
+<p>最後封板1.5hr留給開獎，結果最後一名意外爭奪得相當激烈(X)。<br><img src="https://imgur.com/AcLUasF.jpg" alt=""></p>
+<p>除了前三名的頒獎外，主辦方還加了奇怪的成就任務在裡面，像是全場尾殺、全場第3個AC/WA、全場33AC、全場第333非AC、最多WA隊伍，諸如此類，有一項「最會抓蟲隊伍」居然真的送捕蟲網XDDDD 實在黑人問號.jpg<br><img src="https://imgur.com/YSlqFAj.jpg" alt=""></p>
+<p>之後就散會了，和這五天的隊友道別。<br>我還打包了一些剩下的把廢帶回家(抹臉)</p>
+<hr>
+<p>總結一下，這次營隊應該算是接觸競程最挫折的一次QQ<br>連我去交大PCCA的進階組營隊都沒這麼慘烈(雖然一樣聽不懂w)，可能對象都是國高中生的緣故吧，年齡層差到讓我有點來錯地方的錯覺，也讓我後悔太晚踏進這個圈子，何況進入圈子還沒好好認真打QQ 直到現在快要大四畢業還是跟廢柴一樣嗚嗚嗚。</p>
+<p>在此<br>謝謝總召電仁<br>謝謝兩位凱瑞隊友<br>謝謝這五天營隊的講師們<br>謝謝在身邊默默協助的工人們<br>謝謝這群讓我看清實力界線的學員們<br>如果有緣希望未來還能繼續待在這圈子，之後World Final就靠你們啦(๑•̀ㅂ •́)و ✧</p>
+<p>最後的最後 附上大合照結束這次營隊，聽說 O(1) 就要這樣比!?<br><img src="https://imgur.com/pZc9JPt.jpg" alt=""></p>
+<div style="width: 168px; margin: auto"><img src="/imges/end.png" alt=""></div>
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/程式競賽/" rel="tag"># 程式競賽</a>
+          
+            <a href="/tags/ioicamp/" rel="tag"># ioicamp</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/02/07/20190207-過新年就是要欠債對唄/" rel="next" title="【週記】過新年就是要欠債對唄！">
+                <i class="fa fa-chevron-left"></i> 【週記】過新年就是要欠債對唄！
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/02/25/20190224-開學週漫談/" rel="prev" title="【週記】開學週漫談">
+                【週記】開學週漫談 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概要
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/yctseng.png" alt="yctseng">
+            
+              <p class="site-author-name" itemprop="name">yctseng</p>
+              <div class="site-description motion-element" itemprop="description">關於一些路邊撿到的靈感</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">文章</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">標籤</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/yctseng1227" title="GitHub &rarr; https://github.com/yctseng1227" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:gene26620560@gmail.com" title="E-Mail &rarr; mailto:gene26620560@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://www.facebook.com/people/曾煜鈞/100005578654187" title="Facebook &rarr; https://www.facebook.com/people/曾煜鈞/100005578654187" rel="noopener" target="_blank"><i class="fa fa-fw fa-facebook"></i>Facebook</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Day-1"><span class="nav-number">1.</span> <span class="nav-text">Day 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Day-2"><span class="nav-number">2.</span> <span class="nav-text">Day 2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Day-3"><span class="nav-number">3.</span> <span class="nav-text">Day 3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Day-4"><span class="nav-number">4.</span> <span class="nav-text">Day 4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Day-5"><span class="nav-number">5.</span> <span class="nav-text">Day 5</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">yctseng</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 強力驅動 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主題 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.1.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.0"></script>
+
+  <script src="/js/motion.js?v=7.1.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.0"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.0"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.0"></script>
+<script src="/js/post-details.js?v=7.1.0"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.0"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
