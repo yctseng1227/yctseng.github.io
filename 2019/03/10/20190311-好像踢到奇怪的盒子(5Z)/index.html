@@ -15,7 +15,7 @@
 
 
 <html class="theme-next gemini use-motion" lang="zh-TW">
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -103,8 +103,19 @@
   
 
 
-
-
+<head><meta name="generator" content="Hexo 3.9.0">
+#JavaScript
+<script>
+    (function(){
+        if(''){
+            if (prompt('猜猜看密碼？') !== ''){
+                alert('噗噗！你打錯惹www');
+                history.back();
+            }
+        }
+    })();
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
 
   <meta name="description" content="好像很久沒更新部落格www （跪一方面是沒什麼趣事可以分享，另一方面是懶癌發作 XD只好浮上來換口氣說說最近的事囉~ 另外用hexo框架更新網站偶爾會遇到command not found: hexo不得不說有點頭痛呢… 最近終於查清是Node.js的更新問題。果然對於自己不熟悉的環境要找問題就不太容易呢~ 請容許我把解決方法放在這裡（其實就只是更新node版本sudo npm install">
 <meta name="keywords" content="生活札記">
@@ -127,7 +138,7 @@
 
   
   
-  <link rel="canonical" href="https://yctseng1227.github.io/2019/03/10/20190311-好像踢到奇怪的盒子(5Z)/">
+  <link rel="canonical" href="https://yctseng1227.github.io/2019/03/10/20190311-好像踢到奇怪的盒子(5Z)/"/>
 
 
 
@@ -185,7 +196,7 @@
   .use-motion .logo-line-before i { left: initial; }
   .use-motion .logo-line-after i { right: initial; }
   </style>
-</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</noscript>
 
 </head>
 
@@ -248,7 +259,7 @@
 
     
 
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首頁</a>
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br/>首頁</a>
 
   </li>
         
@@ -265,7 +276,7 @@
 
     
 
-    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>關於</a>
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br/>關於</a>
 
   </li>
         
@@ -282,7 +293,7 @@
 
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>記錄</a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br/>記錄</a>
 
   </li>
 
@@ -334,16 +345,16 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://yctseng1227.github.io/2019/03/10/20190311-好像踢到奇怪的盒子(5Z)/">
+    <link itemprop="mainEntityOfPage" href="https://yctseng1227.github.io/2019/03/10/20190311-好像踢到奇怪的盒子(5Z)/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yctseng">
-      <meta itemprop="description" content="有事者，試競程">
-      <meta itemprop="image" content="/images/yctseng.png">
+      <meta itemprop="name" content="yctseng"/>
+      <meta itemprop="description" content="有事者，試競程"/>
+      <meta itemprop="image" content="/images/yctseng.png"/>
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="yctseng's Blog">
+      <meta itemprop="name" content="yctseng's Blog"/>
     </span>
 
     
@@ -534,7 +545,9 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="/images/yctseng.png" alt="yctseng">
+              <img class="site-author-image" itemprop="image"
+                src="/images/yctseng.png"
+                alt="yctseng"/>
             
               <p class="site-author-name" itemprop="name">yctseng</p>
               <div class="site-description motion-element" itemprop="description">有事者，試競程</div>
