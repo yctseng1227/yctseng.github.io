@@ -114,6 +114,7 @@
 <meta property="og:locale" content="zh-TW">
 <meta property="og:image" content="https://imgur.com/VT0C73f.jpg">
 <meta property="og:image" content="https://imgur.com/FNVkFW5.jpg">
+<meta property="og:image" content="https://imgur.com/E4ZDDm2.jpg">
 <meta property="og:image" content="https://imgur.com/B9Ik34D.jpg">
 <meta property="og:image" content="https://imgur.com/hXYbNHu.jpg">
 <meta property="og:image" content="https://imgur.com/rECyuCN.jpg">
@@ -122,7 +123,7 @@
 <meta property="og:image" content="https://imgur.com/AcLUasF.jpg">
 <meta property="og:image" content="https://imgur.com/YSlqFAj.jpg">
 <meta property="og:image" content="https://imgur.com/pZc9JPt.jpg">
-<meta property="og:updated_time" content="2019-11-19T12:58:40.486Z">
+<meta property="og:updated_time" content="2019-11-19T13:08:18.822Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【分享】IOI Camp 2019 一些O(1)的心得">
 <meta name="twitter:description" content="所謂的 IOI Camp 就是”程式解題競賽集訓營”，由一群台大資工學生負責主辦的訓練營。由於營隊期間網路上出現了 Fibonacci number 只需要 $O(1)$ 如此神奇的言論，現場學員都是圈內人自然就討論得相當熱烈，講師偶爾都還會拿出來消遣一下 XDDDD">
@@ -436,7 +437,8 @@
 <p>上午是<strong><a href="https://hackmd.io/p/ry1P-slfV#/" target="_blank" rel="noopener">Eddy時間</a></strong>，算是朝聖codeforces紅人，畢竟他在我的追蹤清單內算出盡風頭(?)<br>從他的競賽經歷分享聽到不少有趣的事，附上我當下的筆記可以參考看看~</p>
 <p>下午是<strong><a href="https://docs.google.com/presentation/d/1cI-kglF4zU8RKK8or3M11PlrqO5STB19HVNkIZ-yweQ/edit#slide=id.p" target="_blank" rel="noopener">組合賽局</a></strong>，自然又再一次提到Nim，讓我想起2016年參加交大PCCA寒訓的第一堂課，講到理論就是看台下各種硬撐(頭痛)，從之後的練習題稍稍有抓到一點感覺，但大部分的題目還是推不出來啊…慘。</p>
 <p>晚上是趣味賽，題目超多~ 23題分成除蟲題、駭客題、構造題、填空題。  </p>
-<p><div style="width: 300px; margin: auto">![](https://imgur.com/E4ZDDm2.jpg)</div><br>不得不說出題方面很用心，從一些除蟲題可以感受到命題者的惡意(X) 親身經歷(O)，還要求在edit distance的指定字數內完成修改。重點是有追加EX難度，也就是把題目設計和原題相同，但指定字數會隨著隊伍的最佳解再Rejudge，甚至逼到工人下場跟著打XDDD 像是pU遞增路徑應該rejudge有6,7次了吧，還有一題的edit distance從4字元一路下修成2字元，最後變1字元實在太神啦www</p>
+<p><img width="400px" src="https://imgur.com/E4ZDDm2.jpg"></p>
+<p>不得不說出題方面很用心，從一些除蟲題可以感受到命題者的惡意(X) 親身經歷(O)，還要求在edit distance的指定字數內完成修改。重點是有追加EX難度，也就是把題目設計和原題相同，但指定字數會隨著隊伍的最佳解再Rejudge，甚至逼到工人下場跟著打XDDD 像是pU遞增路徑應該rejudge有6,7次了吧，還有一題的edit distance從4字元一路下修成2字元，最後變1字元實在太神啦www</p>
 <p>其中pI &amp; pJ有讓我驚訝到，是個轉置矩陣的除蟲題(noraml &amp; EX)。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[<span class="number">3636</span>][<span class="number">3636</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n; <span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">    <span class="keyword">int</span> sum=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;++i)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;n;++j)&#123;</span><br><span class="line">            <span class="built_in">cin</span>&gt;&gt;a[i][j];</span><br><span class="line">            sum+=a[i][j];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;++i)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;n;++j)&#123;</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;a[j][i]&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;sum&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>sample code 看起來完全沒有問題，畢竟只是簡單的 <code>i</code>,<code>j</code> 互換輸出，但全場這題的TLE數卻相當可怕，試過<code>cin.tie()</code>加速或是陣列倒存後原本也是要放棄的，我索性看看隊友其他AC的題目，然後發現某個除蟲題要把<code>#define</code>內的<code>int8_t</code>改成<code>int16_t</code>，所以我就嘗試把陣列改成<code>int16_t</code>居然意外壓線AC。<br>最後題解是因為<code>int</code>(<code>int32_t</code>)的<code>3636*3636 array</code>剛好卡在memory上限，導致輸入無論是<code>cin</code>還是<code>scanf</code>都會爛掉，在不曉得吃了鬼什麼的情況下就會持續跑到TLE，藉由改成<code>short</code>(<code>int16_t</code>)壓低memory，讓我一整個覺得很神奇!!!</p>
@@ -466,14 +468,16 @@
 <li><p>題目限制不准用time()，結果出題者講完，就被其他講師拆台用邪門歪道可以解掉(鬧)</p>
 <ul>
 <li><p><code>??</code>在c++會被吃成空白，<code>/</code>作為跳脫自元把預設換行吃掉，寫成下面這樣:</p>
-  <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cout</span> &lt;&lt; ti??/</span><br><span class="line">me(<span class="number">0</span>) &lt;&lt; <span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>cout &lt;&lt; ti??/<br>me(0) &lt;&lt; endl;</p>
+</blockquote>
 </li>
 </ul>
 </li>
 </ul>
 <pre><code>- `##`在define作為concat會把前後字組合起來
 
-    <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> abc ti##me</span></span><br></pre></td></tr></table></figure>
+    &gt; #define abc ti##me
 </code></pre><ul>
 <li><code>&lt;bits/stdc++.h&gt;</code>好用歸好用但要小心使用，例如有題構造題出現<br><code>______r(__a__b(_d___ _*_?_n_[_d__]__n)?_(_*_)__1__.____n__a_);</code>，<br>在引入過程有個奇怪的header也會被引入…那就是<code>&lt;regex&gt;</code>，會把那串誤認成regex function而吃鱉。</li>
 <li><p>善用模板(e.g. Dinic’s Algorithm <a href="https://github.com/wangyenjen/codebook/blob/master/codes/dinic.cpp" target="_blank" rel="noopener">JAW-codebook</a>)</p>
@@ -498,7 +502,7 @@
 <hr>
 <h3 id="Day-5"><a href="#Day-5" class="headerlink" title="Day 5"></a>Day 5</h3><p>最後一天的營隊。<br>一種名人見面會的概念，繼Day 1見到 eddy 後就是這天的講師 dreamoon ，兩位都是codeforces上厲害的臺灣coder，這天上午教的是<strong><a href="https://hackmd.io/5ZKjZzGrSM2K13XPzaJLIw" target="_blank" rel="noopener">從枚舉到K短路</a></strong>。</p>
 <p>開場就在曬女友，不得不說打程式競賽打到有女朋友實在很令人羨慕啊，但連codeforces的handle都改loveXX實在太閃啦QQ 課程內容比起講義上的東西，聽到更多競賽經歷，但其實簡單講就是暴搜，結果看到投影片出現了我在 <strong><a href="https://www.facebook.com/TaiwanCompetitiveProgrammingBlog/" target="_blank" rel="noopener">競程日記@FB</a></strong> 寫的爛code被dreamoon拿出來鞭屍XDDDDD 回憶起當時為了拼AC直接硬爆15層for loop，寫完真的頭hen痛，如今用遞迴跑就簡單許多(嘆)。</p>
-<p>下午拍完大合照就是final團體正式賽了(5hr)，還有亂入一隊工作人員隊「utaha」真的很刺激(?)<br>原本有一題看起來可以用字串反轉LCS的，結果我寫完發現隊友已經AC掉了…之後就真的躺到底QQ 反而高一隊友還解了2,3題(像是關鍵的nim變形)，其他都是清大生寫掉，猛!!<br>其中有個物理的電學看到傻眼，腦袋開始回憶自己高中物理到底學了什麼公式，結果還現場重新推一遍頭痛，最後聽隊友用x,y分力算總和就行了= =a</p>
+<p>下午拍完大合照就是final團體正式賽了(5hr)，還有亂入一隊工作人員隊「utaha」真的很刺激(?)<br>原本有一題看起來可以用字串反轉LCS的，結果我寫完發現隊友已經AC掉了…之後就真的躺到底QQ 反而高一隊友還解了2,3題(像是關鍵的nim變形)，其他都是清大隊友寫掉，猛!!<br>其中有個物理的電學看到傻眼，腦袋開始回憶自己高中物理到底學了什麼公式，結果還現場重新推一遍頭痛，最後聽隊友用x,y分力算總和就行了= =a</p>
 <p>雖然不是第一次打5hr的競賽，但我精神上還是很累(即便我躺得很兇)，外頭的把廢實在是精神糧食，真的很好吃，不信放圖片給你看（扔</p>
 <p><img src="https://imgur.com/0htjOll.jpg" alt></p>
 <p>最後封板1.5hr留給開獎，結果最後一名意外爭奪得相當激烈(X)。<br><img src="https://imgur.com/AcLUasF.jpg" alt></p>
