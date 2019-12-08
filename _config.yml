@@ -91,4 +91,4 @@ encrypt:
 backup:
     type: git
     repository:
-       github: git@github.com:yctseng1227/yctseng1227.github.io.git, hexo
+       github: git@github.com:yctseng1227/yctseng1227.github.io.git, master
