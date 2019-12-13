@@ -1,5 +1,5 @@
 ---
-title: 【Report】Voronoi Diagram Project
+title: 【Report】Voronoi Diagram Project（施工中）
 date: 2019-12-8 17:34:34
 tags:
 	- Reports
@@ -45,20 +45,24 @@ Code: https://github.com/yctseng1227/voronoi_project
 
 先來看看還沒初測就胎死腹中的`kivy`介面👇👇
 
-![]()
+![](https://github.com/yctseng1227/voronoi_project/blob/master/pic/Screenshot%20from%202019-12-08%2018-14-25.png?raw=true)
 
 再來是使用`tkinter`完測後 Run出來的介面👇👇
 
-![](https://github.com/yctseng1227/voronoi_project/blob/master/voronoi_tkinter/pic/Screenshot%20from%202019-12-08%2017-42-01.png?raw=true)
+![](https://github.com/yctseng1227/voronoi_project/blob/master/pic/Screenshot%20from%202019-12-08%2017-42-01.png?raw=true)
 
 簡單介紹一下功能：
 
-- import：讀檔
-- load：讀檔
-- random：隨機生成N個點，預設6點可重複疊加
-- save：存檔
-- next case：當讀入的檔有多筆case，
-- step by step：Divide-and-Conquer
-- run VD：畫出Voronoi Diagram
+- import: 讀檔:Input format (2)
+- load: 讀檔:Input format (1)
+- random: 隨機生成N個點，預設為6點可重複疊加
+- save: 將point, edge存成Input format(2)
+- next case: 當讀入的檔有多筆case，依此按鈕進行下一筆testcase
+- step by step: 依Divide-and-Conquer逐步執行
+- run VD: 畫出Voronoi Diagram結果
 - clear：清除畫布
-- convex hull：debug用？
+- convex hull: 將所有的Convex Hull畫出，算是拿來dubug用的XD
+
+
+
+< 未完待續 >
