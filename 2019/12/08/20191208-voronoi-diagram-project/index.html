@@ -105,19 +105,22 @@
 
 
   <meta name="description" content="Hmmmmmmm… 上圖是理想中的Voronoi Diagram 不過很遺憾的是Algorithm這門課我沒成功做出來QQ 即便如此還是要寫報告：）">
-<meta name="keywords" content="Reports">
+<meta name="keywords" content="Project">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【Report】Voronoi Diagram Project（施工中）">
+<meta property="og:title" content="【Project】Voronoi Diagram">
 <meta property="og:url" content="https://yctseng1227.github.io/2019/12/08/20191208-voronoi-diagram-project/index.html">
 <meta property="og:site_name" content="yctseng&#39;s Blog">
 <meta property="og:description" content="Hmmmmmmm… 上圖是理想中的Voronoi Diagram 不過很遺憾的是Algorithm這門課我沒成功做出來QQ 即便如此還是要寫報告：）">
 <meta property="og:locale" content="zh-TW">
 <meta property="og:image" content="https://pbs.twimg.com/media/D6tZ-v4UIAAMm7t?format=jpg&name=large">
-<meta property="og:image" content="https://github.com/yctseng1227/voronoi_project/blob/master/pic/Screenshot%20from%202019-12-08%2018-14-25.png?raw=true">
-<meta property="og:image" content="https://github.com/yctseng1227/voronoi_project/blob/master/pic/Screenshot%20from%202019-12-08%2017-42-01.png?raw=true">
-<meta property="og:updated_time" content="2019-12-13T08:28:07.331Z">
+<meta property="og:image" content="https://github.com/yctseng1227/voronoi_project/blob/master/pic/pic05.png?raw=true">
+<meta property="og:image" content="https://github.com/yctseng1227/voronoi_project/blob/master/pic/pic02.png?raw=true">
+<meta property="og:image" content="https://github.com/yctseng1227/voronoi_project/blob/master/pic/pic07.png?raw=true =340x">
+<meta property="og:image" content="https://github.com/yctseng1227/voronoi_project/blob/master/pic/pic06.png?raw=true =340x">
+<meta property="og:image" content="https://github.com/yctseng1227/voronoi_project/blob/master/pic/pic03.png?raw=true">
+<meta property="og:updated_time" content="2019-12-18T09:56:36.811Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【Report】Voronoi Diagram Project（施工中）">
+<meta name="twitter:title" content="【Project】Voronoi Diagram">
 <meta name="twitter:description" content="Hmmmmmmm… 上圖是理想中的Voronoi Diagram 不過很遺憾的是Algorithm這門課我沒成功做出來QQ 即便如此還是要寫報告：）">
 <meta name="twitter:image" content="https://pbs.twimg.com/media/D6tZ-v4UIAAMm7t?format=jpg&name=large">
 
@@ -137,7 +140,7 @@
   };
 </script>
 
-  <title>【Report】Voronoi Diagram Project（施工中） | yctseng's Blog</title>
+  <title>【Project】Voronoi Diagram | yctseng's Blog</title>
   
 
 
@@ -351,7 +354,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">【Report】Voronoi Diagram Project（施工中）
+          <h1 class="post-title" itemprop="name headline">【Project】Voronoi Diagram
 
               
             
@@ -429,27 +432,78 @@
 <p>從<code>commits</code>數量應該不難看出花了不少時間在上面，但效果顯然很糟</p>
 <p>我爛 QQ</p>
 <hr>
-<p>由於這份作業不光是寫出VD演算法，還必須將圖片畫出來！</p>
-<p>所以在作圖上我選擇Python，想說CTF也會用到就加減練語法</p>
+<p>由於這份作業不光是寫出VD演算法，還必須將圖片畫出來！<br>所以在作圖上我選擇Python，想說CTF也會用到就加減練語法M(_ _)M</p>
 <p>使用的環境是Python 3.6，考慮到會用到一些奇怪套件，所以先建立虛擬環境venv等前置作業。</p>
 <p>作圖方面原本採用的是Python開源函式庫-<code>kivy</code>，結果因為助教的作業環境是Windows，所以打包成<code>.exe</code>的過程會發生套件衝突，因此在初測前幾天忍痛搬家到Python內建函式庫-<code>tkinter</code>，這過程大約花了我一天的時間在處理QQ</p>
 <p>先來看看還沒初測就胎死腹中的<code>kivy</code>介面👇👇</p>
-<p><img src="https://github.com/yctseng1227/voronoi_project/blob/master/pic/Screenshot%20from%202019-12-08%2018-14-25.png?raw=true" alt></p>
-<p>再來是使用<code>tkinter</code>完測後 Run出來的介面👇👇</p>
-<p><img src="https://github.com/yctseng1227/voronoi_project/blob/master/pic/Screenshot%20from%202019-12-08%2017-42-01.png?raw=true" alt></p>
+<p><img src="https://github.com/yctseng1227/voronoi_project/blob/master/pic/pic05.png?raw=true" alt></p>
+<p>個人覺得<code>kivy</code>在圖形界面上比較理想，而且<code>.kv</code>在建構上也比較容易整理，臨時搬到<code>tkinter</code>反而code被我寫爛了，雖然是可以勉強執行，但造成後續寫多點VD維護上的困難QQ</p>
+<p>另外在打包<code>.exe</code>方面，由於我的作業環境是UbuntuOS，在該系統的<code>Pyinstaller</code>操作下生成的執行檔並無法在WindowsOS環境下執行，最後折衷和同學借電腦進行打包，也因此沒機會針對<code>.exe</code>作多次檢查，結果就是初測時發生<code>.py</code>和<code>.exe</code>執行同一筆測資出現不同的結果，真的是見鬼了wwww 至今還是沒辦法解釋該情況怎麼會出現…</p>
+<p>而在多點VD的操作上，單純以Divide-and-Conquer演算法來說並不困難，但是在圖形的實現方面需要考量線條的距離繪製，比起消除多餘線條，個人傾向修正線條的起訖。在進行Hyperplane的時候，撞到的VD線不曉得到底該往哪邊進行縮減，導致最後畫出來的結果常常會是相反的方向，這細節大部分的VD的不太會提及，因此debug方面花了相當多的時間去”猜”怎麼畫線，最後還是不如預期地拿了低分（唉</p>
+<p>另外就是step by step，平常少有機會遇到這種操作，我用的是以<code>list</code>形式把每個不同階段的points list和edge list記錄下來，等需要的時候(按button)再逐一從該<code>list</code>取出來繪製，不過在完測時看起來是儲存points list和edge list的時機不對，造成斷點相當明顯稍稍覺得可惜。</p>
+<p>總體來說，花了時間卻拿不到相對的分數，嗚嗚浪費時間QQ</p>
 <p>簡單介紹一下功能：</p>
+<p><img src="https://github.com/yctseng1227/voronoi_project/blob/master/pic/pic02.png?raw=true" alt></p>
 <ul>
-<li>import: 讀檔:Input format (2)</li>
-<li>load: 讀檔:Input format (1)</li>
+<li>import: 讀檔格式如下</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">P 103 200</span><br><span class="line">P 193 64</span><br><span class="line">P 193 370</span><br><span class="line">P 283 200</span><br><span class="line">E 0 34 193 161</span><br><span class="line">E 0 363 193 261</span><br><span class="line">E 193 161 193 261</span><br><span class="line">E 193 161 437 0</span><br><span class="line">E 193 261 600 476</span><br></pre></td></tr></table></figure>
+<ul>
+<li>load: 讀檔格式如下</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"># comment</span><br><span class="line">6</span><br><span class="line">487 191</span><br><span class="line">417 388</span><br><span class="line">504 349</span><br><span class="line">681 125</span><br><span class="line">589 282</span><br><span class="line">725 279</span><br><span class="line">6</span><br><span class="line">69 304</span><br><span class="line">110 449</span><br><span class="line">174 333</span><br><span class="line">244 280</span><br><span class="line">335 139</span><br><span class="line">355 284</span><br><span class="line">12</span><br><span class="line">69 304</span><br><span class="line">174 333</span><br><span class="line">110 449</span><br><span class="line">335 139</span><br><span class="line">244 280</span><br><span class="line">355 284</span><br><span class="line">487 191</span><br><span class="line">417 388</span><br><span class="line">504 349</span><br><span class="line">681 125</span><br><span class="line">589 282</span><br><span class="line">725 279</span><br><span class="line">0</span><br><span class="line"># any else?</span><br></pre></td></tr></table></figure>
+<ul>
 <li>random: 隨機生成N個點，預設為6點可重複疊加</li>
-<li>save: 將point, edge存成Input format(2)</li>
+<li>save: 將point, edge存成<code>import</code>格式</li>
 <li>next case: 當讀入的檔有多筆case，依此按鈕進行下一筆testcase</li>
 <li>step by step: 依Divide-and-Conquer逐步執行</li>
 <li>run VD: 畫出Voronoi Diagram結果</li>
 <li>clear：清除畫布</li>
 <li>convex hull: 將所有的Convex Hull畫出，算是拿來dubug用的XD</li>
 </ul>
-<p>&lt; 未完待續 &gt;</p>
+<p>環境</p>
+<ul>
+<li><p>Operating System</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">                         ./+o+-       </span><br><span class="line">                 yyyyy- -yyyyyy+      Username: yctseng</span><br><span class="line">              :<span class="comment">//+//////-yyyyyyo      OS: Ubuntu 18.04 bionic</span></span><br><span class="line">          .++ .:<span class="regexp">/++++++/</span>-.+sss/<span class="string">`      Kernel: x86_64 Linux 5.0.0-36-generic</span></span><br><span class="line"><span class="string">        .:++o:  /++++++++/:--:/-      Uptime: 9d 18h 15m</span></span><br><span class="line"><span class="string">       o:+o+:++.`</span>..<span class="string">``</span><span class="string">`.-/oo+++++/     Packages: 2347</span></span><br><span class="line"><span class="string">      .:+o:+o/.          `</span>+sssoo+<span class="regexp">/    Shell: bash 4.4.20</span></span><br><span class="line"><span class="regexp"> .++/</span>+:+oo+o:<span class="string">`             /sssooo.   Resolution: 3840x1080</span></span><br><span class="line"><span class="string">/+++//+:`</span>oo+o               /::--:.   DE: GNOME </span><br><span class="line">\+<span class="regexp">/+o+++`o++o               ++/</span><span class="comment">///.   WM: GNOME Shell</span></span><br><span class="line"> .++.o+++oo+:<span class="string">`             /dddhhh.   WM Theme: Adwaita</span></span><br><span class="line"><span class="string">      .+.o+oo:.          `</span>oddhhhh+    GTK Theme: Ambiance [GTK2/<span class="number">3</span>]</span><br><span class="line">       \+.++o+o<span class="string">``</span>-<span class="string">``</span><span class="string">``</span>.:ohdhhhhh+     Icon Theme: ubuntu-mono-dark</span><br><span class="line">        <span class="string">`:o+++ `</span>ohhhhhhhhyo++os:      Font: Ubuntu <span class="number">11</span></span><br><span class="line">          .o:<span class="string">`.syhhhhhhh/.oo++o`</span>      CPU: Intel Core i7<span class="number">-8700</span> @ <span class="number">12</span>x <span class="number">4.6</span>GHz</span><br><span class="line">              /osyyyyyyo++ooo+++<span class="regexp">/     GPU: intel</span></span><br><span class="line"><span class="regexp">                  ````` +oo+++o\:     RAM: 15831MiB</span></span><br><span class="line"><span class="regexp">                         `oo++.</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Python3.6 (Virtual environment)</p>
+</li>
+<li>Package version<ul>
+<li>imutils==0.5.3</li>
+<li>Kivy==1.11.1</li>
+<li>numpy==1.13.3</li>
+<li>scipy==0.19.1</li>
+<li>pyinstaller==3.5 (WindowsOS)</li>
+</ul>
+</li>
+</ul>
+<h3 id="Data-Structure"><a href="#Data-Structure" class="headerlink" title="Data Structure"></a><strong>Data Structure</strong></h3><ul>
+<li><strong>Point</strong>:<br>用Python的<code>tuple</code>資料型態以$(x, y)$儲存讀入的points，再放入<code>list</code>當作該testcase的point list。</li>
+<li><strong>Edge</strong><br>從Python環境而言，必須用兩點才能畫成一線，所以在資料結構上以$[(x1, y1), (x2, y2)]$方式儲存。另外一種是進行中垂線繪製時，由於除了該中垂線以原本$[(x3, y3), (x4, y4)]$ 儲存外，還必須記錄該線是以哪一條線作為中線基準，因此儲存方式為$[(x3, y3), (x4, y4), (form_x1, form_y1), (form_x2, form_y2)]$，方便後續進行VD。</li>
+<li><strong>Convex Hull (CH)</strong><br>前置作業為針對$x$座標將point list進行排序，因此CH function的回傳值為CH的描點順序。</li>
+<li><strong>Voronoi Diagram (VD)</strong><br>VD的資料型態為edge list，其中不乏上述Edge data structure的兩種儲存方式。</li>
+</ul>
+<h3 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a><strong>Algorithm</strong></h3><ul>
+<li><p><strong>Convex Hull (CH)</strong><br>利用排序先找到最外圍的任一point作為起點，窮舉平面上所有的點，利用向量積(cross product)判斷是否在圈內or圈外，順著外圍繞一圈。</p>
+</li>
+<li><p><strong>Voronoi Diagram (VD)</strong><br>3點以內利用外心以及各邊的中點，考慮各種情況下畫出VD。<br>多點情況，利用<code>Divide-and-Conquer</code>進行實作，在遞迴至3點以下時將會直接回傳結果，此外將point set拆成兩邊進行遞迴後再合併，詳見如下(n為points count)。</p>
+<script type="math/tex; mode=display">f(point\ set)=\left\{
+\begin{aligned}
+Do\ nothing && n = 1 \\
+Return\ Line && n = 2 \\
+Return\ VD && n = 3 \\
+Return\ Merge(f(point\ set[0, n/2]),f(point\ set[n/2, n])) && n > 3 \\
+\end{aligned}
+\right.</script><p>針對<code>Merge function</code>，其步驟如下:</p>
+</li>
+<li>step 0. Hyperplane預設在畫布由上往下描出。</li>
+<li>step 1. 將兩邊points set各自以y座標進行排序，找出最上面兩點作為參考點。</li>
+<li>step 2. 利用參考點畫出的中垂線作為Hyperplane，並且和兩邊VD的所有edge set找出最上面的交點，並記錄撞到的edge。</li>
+<li>step 3. 根據撞到的edge進行參考點移動，並消除多餘的線。</li>
+<li>step 4. 重複step 2和step 3，直到兩邊point set走到底為止。</li>
+</ul>
+<p><center>(下面兩張圖各6點。<font color="#0000FF">藍線為CH</font>; <font color="#00FF00">綠線為VD</font>; <font color="FF0000">紅線為Hyperplane</font>)</center><br><div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 50%;"><img src="https://github.com/yctseng1227/voronoi_project/blob/master/pic/pic07.png?raw=true =340x" alt></div><div class="group-picture-column" style="width: 50%;"><img src="https://github.com/yctseng1227/voronoi_project/blob/master/pic/pic06.png?raw=true =340x" alt></div></div></div></div></p>
+<h3 id="Result"><a href="#Result" class="headerlink" title="Result"></a><strong>Result</strong></h3><p><img src="https://github.com/yctseng1227/voronoi_project/blob/master/pic/pic03.png?raw=true" alt></p>
 
       
     </div>
@@ -483,7 +537,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Reports/" rel="tag">🏷 Reports</a>
+            <a href="/tags/Project/" rel="tag">🏷 Project</a>
           
         </div>
       
@@ -548,8 +602,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概要
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -720,6 +783,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Data-Structure"><span class="nav-number">1.</span> <span class="nav-text">Data Structure</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Algorithm"><span class="nav-number">2.</span> <span class="nav-text">Algorithm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Result"><span class="nav-number">3.</span> <span class="nav-text">Result</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
