@@ -1,8 +1,9 @@
 ---
 title: 【活動】maimai愚人節解謎 <怒槌～光吉猛修一部謎～>
 date: 2019-04-02 03:06:00
-tags:
+categories: 
 - 休閒娛樂
+tags:
 - 音ゲー
 - April Fools' Day
 ---

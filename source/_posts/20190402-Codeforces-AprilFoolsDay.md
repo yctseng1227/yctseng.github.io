@@ -1,9 +1,12 @@
 ---
 title: 【活動】Codeforces April Fools Day Contest 2019
 date: 2019-04-02 18:37:00
+categories: 
+- Algorithm程式競賽
 tags:
-- 程式競賽
+- Codeforces
 - April Fools' Day
+- Algorithm
 mathjax: true
 
 ---
