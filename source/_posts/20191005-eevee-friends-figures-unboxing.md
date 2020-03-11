@@ -1,11 +1,12 @@
 ---
-title: 【開箱】伊布家族... 啊~ 真香❤
+title: 【開箱】MegaHouse 伊布家族... 啊~ 真香❤
 date: 2019-10-05 20:45:21
 categories:
 - 敗家開箱
 tags: 
 - ACGN
 - Pokemon
+- MegaHouse G.E.M.EX Series
 	
 ---
 
