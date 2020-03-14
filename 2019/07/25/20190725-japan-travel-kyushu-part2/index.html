@@ -88,7 +88,7 @@
     back2top_sidebar: true,
     fancybox: false,
     fastclick: false,
-    lazyload: false,
+    lazyload: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     algolia: {
@@ -440,13 +440,6 @@
           
 
           
-            <span class="post-meta-divider">|</span>
-            <span class="post-meta-item-icon">
-            <i class="fa fa-eye"></i>
-             閱讀次數： 
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
-            </span>
-          
 
           
 
@@ -465,7 +458,7 @@
       
 
       
-        <script src="/crypto-js.js"></script><script src="/mcommon.js"></script><h3 id="encrypt-message">Welcome to my blog, enter password to read.</h3><link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"> <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> <div id="security"> <div> <div class="input-group"> <input type="text" class="form-control" aria-label="Enter the password." id="pass"> <div class="input-group-btn"> <button type="button" class="btn btn-default" onclick="decryptAES()">Decrypt</button> </div> </div> </div> </div> <div id="encrypt-blog" style="display:none"> U2FsdGVkX1/IpAmwOQGKGH2APDSRttdkXlUvGD9PrABtFjcdDkthBVEzU4lvvc080ekauH/H6DwhPc6779NFc9qhjrbiwJof7Dul2atbptOIRyN7dpUURxurwZxIOvz9hP/ni56NcycEg+a7bjydBqTKhPNwKRJzfrMoBEk4azkfXg1xHQQY6UjehADqEpnjsOgBd9bXigdceEXi7t7gFuxFaskjd+fEc6Mlnc5d0SQ9xqb0PlCOtiQ6jyx3FOYchv3KDUZg667Q3RkVjEZawMQa5Pv3UEgwXXGwi1AHwomcDhrNR+tAdTGF7PoBl3MQR9MxKRFQX3Rq15dliZvQUzkcB3j/TLWi1WpoQfKzkzixUxmmQqXwoBqD9T0JCOjyrQMhAuVj72IWZWWjuKMZtiWVz4aFfmhVc6Kl5DCgCYWS6yM6o8GiFnofPc9QbCW02/fQYLq/3j4Y5a1fkwM1RXknwOiYd3UUWPqdSHL+ydHJBWpUET3EBLnSn50L6an6iixcKR6bP668PV/df3GYLUXcJbO5tBRQ+Lsf8p056ruRLinwUZ0xIcNGIuJhK+1bv3Pk0xxuXk/Jz/zweIiseoOcbjhdK1KqOvXfpSr71wEEmV+Of5RdQBkG97LD0Hm0M8l95boAtUhGizwSFXAzwO6Xgmkb2iXyJMCCi73I42w7CdeZGrDd6gv5EPaaLQyJF067NyqqHhKuvTdCzA33/abqZHsFOU4C9q6FbGId2XL25BEMYAW7V1cZMcJxoQPdWDGfQN9Z9Y9QvxSWxxEiFS86vwW1MGyZYbq50F2TLWwAAw77uiEWLARRe/pLd7yTjLX5UH4WWPQziZssR70q9J9pRXQ/0wzIA+ZpTIcGjgmlvyHpyAMUTsqXbJISM077tEJVqKm4OBHaQoqzRcISfIZbOa4/G6OhTS8jqloVHLfbsDRFVW9Ojmt2u3qaLFAxP3zp4QqRJIwCS8Mpc2gyNuelVAeTPIyvjpWyvDm/me9QCsVajCRMRHpVNwnvwlMB3BKmE0KjfmEppdL49DiJjorSk0ZRf1E2RXCog1omgdjDGwCL3rDgbtLJW0Q/hBcuZFlWu4YfQ/JW1vWjvnE4k3US1vm1oedPNKIsnrrqrqxPMlvfX8pO2fzcuj0I60aqYOVKrdufzXE1a0ijAclQhp7JEdS4k0ZiVHq5ZhuIVlPKr8LwMhQQJdy3zmNbkR6OthFzmKF2kzqFNoMBix5ExBjlqnXMqY6GcNWQNHp2/Hf6imw+AvgjFT41PzvMJQm4s0hwEOiTtyIBQ4EYkY9Rn/uiHWjpt6n+8ZdkZtPvmOW7yd2i6y84QUIVBbVZjAP/KVRh7mw9LQq6+GTuVo2eld0sSV7OhSxtWPP/aHTNIkEUmOEFClWF+Cp6Na0tyV1ZgXWzRQvFaXgNAXflH3HECNJqGmhhds4nPX+iYHQgy9i/gzwF0QknYyxs+Zv0f/zJZQlM/6Ryapt2de0/U2efukAltj4gpi76fGeTuwAJkrWVBpMiEifNHCROEjseTcXNygAFjIfKtTjhW+i7/NhPsQNpHR+bhqjRapUSbJ+0lt+ncmsoZeaecpJdDu00KL6Hcd0GQVyPlfjb+offG9czwRBtttEudh5LqNk8nvs9GzvWztxj+yT1YMa/96VBgvNU2mYU7aAd36YBJzCjzCcMVHGPHzXPnaEWfuYK0JqfonkQSGMcAWjARnXWX1+UWvHf </div>
+        <script src="/crypto-js.js"></script><script src="/mcommon.js"></script><h3 id="encrypt-message">Welcome to my blog, enter password to read.</h3><link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"> <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> <div id="security"> <div> <div class="input-group"> <input type="text" class="form-control" aria-label="Enter the password." id="pass"> <div class="input-group-btn"> <button type="button" class="btn btn-default" onclick="decryptAES()">Decrypt</button> </div> </div> </div> </div> <div id="encrypt-blog" style="display:none"> U2FsdGVkX19TJ7LM0g7gqSZMwIcsNl3/neFBH6VMCropiy5TQkNulKY1WLTYP5v9x52+NviCeLsRHY9/uJoWlTaLI7EW/CVmMbCZL9Xs+G1+l5q5Qgt1ymkk7otXb9WmLwUBTRSXgYmcGDi/KFahLzJZYcZVelkcbj8gDp67UtOELwJdEe61f3BDNUyGzvf0FK2ca1NBA576ubJVIDGKnbk3dq/avdIF/uPGk2YoQyL/uuP8g/EGNJyht4P2d+KUIuqYqgHYyLw34dZi1OLP3OoF8mRyzgKIOR8KTh5YkFUp//GZWNWZaMGFcOaFLra7d3OCplaGzUbLYSKSuXAzPvpiwpFzfPuvzuRbNdSffJVrzXxAqRo1kyz6gkS0iyxx3UiJwdEPQ/Ro2Bkt35stPkEQhC7BdoomGtFLDZDBGmGXmVDnDYyA9ZZt/9BHVpLz4cmKK6Qewl/2EY5YckVOzQ1q9iKo1+yZQPcB8jS7kqGtfYXDfBlz6EIcBMpyPbwAEHy3pFzEAfB8Ah4+Ybq6nFReq+Pv1s55rFFyyjzh1LNKyVYcNWg6SBYAFDmEp4dgpyFKkVCyg2JHX36PAv0r6a6RyCI42ONFYefW+66ROXksCkDDrX07LAmjAKSqSRBOcwNoKn6kplPqVq6YWrhV/SqiRSOd0PZyswv2joFtTVVSAxdU+z03tzt6N4sAS3049RPW1LYtRj/gQNwrHCRu0zFQwIxFFJPTB78OczQPLGy1bmvOYrkoKVNUvnzHgGJwjKEt3YNWiUVhIhU64cgbL+qGS6s1X6lSWcwv5x+1ff6AiJKwcU5PM+DgAyyxStmZHaLL9XsW54p/UblpwEP6D6MYLee+3H2tdm/+SSev9mRzkqyAoqoQpLZvV6O36O95a6gUpYg3WhyFpMbNdEel/dCmicR4quPj0TJv/NPSC/3X0saoxOA6iStmlyWxT0h41BFU9Jq2IgQIn0Pj5w+bZ7AAUoATUCjVR/X/WtMsjydIn/hBc3YXworCcHtkMoMN/HfiQF+MAR6L5sTJDYgImsjCzVkdUSLJ/QTB9yhZSVTTK7DYO5A6Xga1YtPN5W1i/qyX14vBNNBLcmdhPYR2qGocg8Rq54d67jYl3soew0LQqFAh28aBd1QG3umfr4fuVF6g5rE2ErfH5C3CsIh17wcq8wm4NHOue+m0h3RnkG6cI5zZHnW7t8AAzNvpapIf6NwJnkEc3KqWQ7BZ/MzWqayvPe5pm2iHXPydR5BhkzCePrNBPnvCU6WPdrfwArJVjl3h2BSqi5HghBG7SW4v5MMCkylCt2kvYsynoOXdeSs3FD1JwbsmrDSfE/NLt3bdoXGP2ncMuTSbj2goq4xyGaeXPBKiF6sVIZGkdzr8LkS2FIp9m8b1GaLDI4vR9rvXObeoGmE27gbuu5TMB3ebmKKTG2p3RgM4o7q04zErXu/bBd00YdLRX3thXVDPpr5kzhU3PYujenYwAQ5kNC9ibOwo4AlHHkZms310m7c1cbHr7voORWFjdBHfm5o+VoS38KkdCD+Uog6gSL7pp1q5Lh9Uzf+mC4ExsB6OZi0CmibEs1wQ1DQ3jTMzIM+Ooxah3PXOiu3iKOH9gmiUBjZ/IWrKmpgpRvFRmArmzY35ZA/9osyunQnSJlgeeo28mjOj/mo7ZkuS4zS08uaJN7jgG/lge8ZXYBIHJGdH/U8bb4dEPp64pNCuu5EFgQO2ejE0 </div>
       
     </div>
 
@@ -873,32 +866,6 @@
 -->
 
         
-<div class="busuanzi-count">
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-  
-    <span class="post-meta-item-icon">
-      <i class="fa fa-user"></i>
-    </span>
-    <span class="site-uv" title="訪客總數">
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-    </span>
-  
-
-  
-    <span class="post-meta-divider">|</span>
-  
-
-  
-    <span class="post-meta-item-icon">
-      <i class="fa fa-eye"></i>
-    </span>
-    <span class="site-pv" title="總瀏覽次數">
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-    </span>
-  
-</div>
-
 
 
 
@@ -934,6 +901,8 @@
 
 
 
+  
+
 
 
 
@@ -955,6 +924,9 @@
 
   
   <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
 
   
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>

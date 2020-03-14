@@ -88,7 +88,7 @@
     back2top_sidebar: true,
     fancybox: false,
     fastclick: false,
-    lazyload: false,
+    lazyload: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     algolia: {
@@ -440,13 +440,6 @@
           
 
           
-            <span class="post-meta-divider">|</span>
-            <span class="post-meta-item-icon">
-            <i class="fa fa-eye"></i>
-             閱讀次數： 
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
-            </span>
-          
 
           
 
@@ -465,7 +458,7 @@
       
 
       
-        <script src="/crypto-js.js"></script><script src="/mcommon.js"></script><h3 id="encrypt-message">Welcome to my blog, enter password to read.</h3><link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"> <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> <div id="security"> <div> <div class="input-group"> <input type="text" class="form-control" aria-label="Enter the password." id="pass"> <div class="input-group-btn"> <button type="button" class="btn btn-default" onclick="decryptAES()">Decrypt</button> </div> </div> </div> </div> <div id="encrypt-blog" style="display:none"> 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 </div>
+        <script src="/crypto-js.js"></script><script src="/mcommon.js"></script><h3 id="encrypt-message">Welcome to my blog, enter password to read.</h3><link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"> <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> <div id="security"> <div> <div class="input-group"> <input type="text" class="form-control" aria-label="Enter the password." id="pass"> <div class="input-group-btn"> <button type="button" class="btn btn-default" onclick="decryptAES()">Decrypt</button> </div> </div> </div> </div> <div id="encrypt-blog" style="display:none"> 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 </div>
       
     </div>
 
@@ -873,32 +866,6 @@
 -->
 
         
-<div class="busuanzi-count">
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-  
-    <span class="post-meta-item-icon">
-      <i class="fa fa-user"></i>
-    </span>
-    <span class="site-uv" title="訪客總數">
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-    </span>
-  
-
-  
-    <span class="post-meta-divider">|</span>
-  
-
-  
-    <span class="post-meta-item-icon">
-      <i class="fa fa-eye"></i>
-    </span>
-    <span class="site-pv" title="總瀏覽次數">
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-    </span>
-  
-</div>
-
 
 
 
@@ -934,6 +901,8 @@
 
 
 
+  
+
 
 
 
@@ -955,6 +924,9 @@
 
   
   <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
 
   
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
