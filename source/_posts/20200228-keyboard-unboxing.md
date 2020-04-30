@@ -9,7 +9,7 @@ tags:
 
 ---
 
-![](https://i.imgur.com/0JfKNvJ.jpg)
+![](https://i.imgur.com/0JfKNvJ.jpg?15%)
 
 妖精伊布的的配色好香喔> <
 

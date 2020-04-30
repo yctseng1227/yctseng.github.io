@@ -128,7 +128,7 @@ exturl: false
 
 # Google Webmaster tools verification.
 # See: https://www.google.com/webmasters
-#google_site_verification:
+google_site_verification: 5POakq1iR3soBgSPJX__DRW6QXkfxgZV9yNcnWQ95j0
 
 # Bing Webmaster tools verification.
 # See: https://www.bing.com/webmaster
@@ -159,8 +159,8 @@ baidu_push: false
 menu:
   home: / || home
   about: /about/ || user
-  #tags: /tags/ || tags
   categories: /categories/ || th
+  tags: /tags/ || tags
   archives: /archives/ || archive
   #schedule: /schedule/ || calendar
   #sitemap: /sitemap.xml || sitemap
@@ -169,7 +169,7 @@ menu:
 # Enable / Disable menu icons / item badges.
 menu_settings:
   icons: true
-  badges: false
+  badges: true
 
 
 # ---------------------------------------------------------------
@@ -189,7 +189,7 @@ scheme: Gemini
 # ---------------------------------------------------------------
 
 # Posts / Categories / Tags in sidebar.
-site_state: true
+site_state: false
 
 # Social Links
 # Usage: `Key: permalink || icon`
@@ -605,9 +605,9 @@ calendar:
 
 # Disqus
 disqus:
-  enable: false
-  shortname:
-  count: true
+  enable: true
+  shortname: yctseng1227-blog
+  count: false
   lazyload: false
 
 # DisqusJS

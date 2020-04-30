@@ -1,12 +1,12 @@
 ---
 title:
-  archive: 記錄
+  archive: 文章
   category: 分類
   tag: 標籤
   schedule: 時間表
 menu:
   home: 首頁
-  archives: 記錄
+  archives: 文章
   categories: 分類
   tags: 標籤
   about: 關於
@@ -70,11 +70,11 @@ search:
   placeholder: 搜尋...
 cheers:
   um: 嗯..
-  ok: 還行
-  nice: 好
-  good: 很好
-  great: 非常好
-  excellent: 太棒了
+  ok: OK
+  nice: Nice
+  good: Good
+  great: Great
+  excellent: Excellent
 keep_on: 繼續努力。
 symbol:
   comma: "，"

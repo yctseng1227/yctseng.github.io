@@ -5,7 +5,7 @@
 # Site
 title: yctseng's Blog
 subtitle: ヾ(〃^∇^)ﾉ
-description: 有事者，試競程
+description: 競程廢物、資安菜鳥 >_<
 keywords: yctseng
 author: yctseng
 language: zh-TW
@@ -15,7 +15,7 @@ timezone:
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: https://yctseng1227.github.io/
 root: /
-permalink: :year/:month/:day/:title/
+permalink: :title/ #:year/:month/:day/:title/
 permalink_defaults:
 
 # Directory
@@ -41,6 +41,7 @@ future: true
 highlight:
   enable: true
   line_number: true
+  first_line_number: 'inline' # | 'always1'
   auto_detect: false
   tab_replace:
 
@@ -56,7 +57,7 @@ index_generator:
 # Category & Tag
 default_category: uncategorized
 category_map:
-tag_map: 生活札記
+tag_map:
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
@@ -83,7 +84,6 @@ deploy:
   branch: master
 
 # Security
-##
 encrypt:
     enable: true
 
