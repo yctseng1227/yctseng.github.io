@@ -2,9 +2,9 @@
 title: 【分享】IOI Camp 2019 一些O(1)的心得 
 date: 2019-02-10 05:02:39
 categories: 
-- Algorithm程式競賽
+- Programming Contest
 tags: 
-- ioicamp
+- ioicamp2019
 - Algorithm
 ---
 

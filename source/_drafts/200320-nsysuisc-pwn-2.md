@@ -2,9 +2,9 @@
 title: 資安社課 Pwn(2) Writeup
 date: 2020-03-27 14:49:40
 categories: 
-- CTF資安競賽
+- CTF
 tag:
-- Pwn
+- Pwn Challenge
 - NSYSUISC
 ---
 

@@ -2,9 +2,9 @@
 title: 資安社課 Pwn basic(1)
 date: 2020-03-22 10:45:23
 categories: 
-- CTF資安競賽
+- CTF
 tag:
-- Pwn
+- Pwn Challenge
 - NSYSUISC
 ---
 

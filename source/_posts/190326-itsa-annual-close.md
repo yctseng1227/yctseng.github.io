@@ -2,7 +2,7 @@
 title: 【週記】ITSA桂冠賽 居...居然收掉了QQQ
 date: 2019-03-26 23:48:53
 categories: 
-- Algorithm程式競賽
+- Programming Contest
 tags:
 - ITSA桂冠賽
 - Algorithm
