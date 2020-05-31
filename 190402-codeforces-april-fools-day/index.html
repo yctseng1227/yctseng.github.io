@@ -118,8 +118,8 @@
 <meta property="article:modified_time" content="2020-05-30T14:16:23.570Z">
 <meta property="article:author" content="yctseng">
 <meta property="article:tag" content="Algorithm">
-<meta property="article:tag" content="April Fools&#39; Day">
 <meta property="article:tag" content="Codeforces">
+<meta property="article:tag" content="April Fools&#39; Day">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://i.imgur.com/1PzScrI.png">
 
@@ -488,11 +488,11 @@
 <p>除了Problem A還算正常，其他都在玩猜猜樂。<br>賽後透過一些線索才把pB, pC, pD搞定，這邊來分享一下~<br>（如果有任何錯誤也歡迎來信指教&gt; &lt;）</p>
 <a id="more"></a>
 <p>&nbsp;</p>
-<p><a href="https://codeforces.com/problemset/problem/1145/A" target="_blank" rel="noopener">Problem A - Thanos Sort</a></p>
+<p><a href="https://codeforces.com/problemset/problem/1145/A" target="_blank" rel="noopener external nofollow noreferrer">Problem A - Thanos Sort</a></p>
 <p>一種有趣的排序法，透過多次對半刪減直到剩下的序列是OK的才停止。<br>這題看計分板相當和平，我自己也是用遞迴慢慢跑就AC了w</p>
 <p>應該算是出題者給大家牛刀小試用的吧~</p>
 <p>&nbsp;</p>
-<p><a href="https://codeforces.com/problemset/problem/1145/B" target="_blank" rel="noopener">Problem B - Kanban Numbers</a></p>
+<p><a href="https://codeforces.com/problemset/problem/1145/B" target="_blank" rel="noopener external nofollow noreferrer">Problem B - Kanban Numbers</a></p>
 <p>題目短到可以不用點開連結XD<br>輸入 $a (1≤a≤99)$ ，輸出”Yes” or “No”。</p>
 <p>計分板上各種猜，提交100餘次的不在話下，可惜我看到pD比較多人AC就沒花時間猜這題了。</p>
 <p>而謎底就藏在題目… “kanban”，拿去估狗翻譯會得到”看板”的解釋，但實際上應該要拆成kan、ban…<br>kan本身無意，而ban有禁止的意味，答案就是「禁止kan」。</p>
@@ -500,13 +500,13 @@
 <p>嗯對、就這樣。 其實在數字的英文拼音中並沒有出現 <strong>k</strong> 或是 <strong>a</strong> 的字母。<br>因此，你只要檢查輸入的數字在拼寫中是否出現 <strong>n</strong> 就行了XD</p>
 <p>真的是不能用正常的思路解謎呢…</p>
 <p>&nbsp;</p>
-<p><a href="https://codeforces.com/problemset/problem/1145/C" target="_blank" rel="noopener">Problem C - Mystery Circuit</a></p>
+<p><a href="https://codeforces.com/problemset/problem/1145/C" target="_blank" rel="noopener external nofollow noreferrer">Problem C - Mystery Circuit</a></p>
 <p>題目給了很神秘的電路…然後要你輸入 $a (0≤a≤15)$ 、輸出整數，沒了。</p>
-<p>老實說這題摸半天還是沒有頭緒，倒是友人在 <a href="https://algassert.com/quirk" target="_blank" rel="noopener">Quirk</a> 把電路拼起來丟0101測一測就發現答案了，莫名其妙XD</p>
+<p>老實說這題摸半天還是沒有頭緒，倒是友人在 <a href="https://algassert.com/quirk" target="_blank" rel="noopener external nofollow noreferrer">Quirk</a> 把電路拼起來丟0101測一測就發現答案了，莫名其妙XD</p>
 <p>附上code，若非該領域的玩家應該都想不到吧…</p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n; <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">	<span class="keyword">int</span> arr[] = &#123;<span class="number">15</span>, <span class="number">14</span>, <span class="number">12</span>, <span class="number">13</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">11</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>&#125;;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; arr[n] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>&nbsp;</p>
-<p><a href="https://codeforces.com/contest/1145/problem/D" target="_blank" rel="noopener">Problem D - Pigeon d’Or</a></p>
+<p><a href="https://codeforces.com/contest/1145/problem/D" target="_blank" rel="noopener external nofollow noreferrer">Problem D - Pigeon d’Or</a></p>
 <p>讓我花最久的題目，老實說真的差一步就解出來了QQ</p>
 <p>原本第一眼看題目還真的看不太懂，所以拿去餵狗翻譯… 嗯、還是看不懂呢。<br>甚至還在懷疑是哪一國的語言，但大部分明明就是看得懂的英文啊QQ</p>
 <p>後來從測資開始猜：<br>範測是給了五個數字、得到一個數字，而且輸入數字範圍還在32內，用往年經驗有可能是邏輯運算，而這種題目最常用的就是 <strong>XOR</strong> ，所以就想盡辦法用範測和XOR湊答案，也因此吃了好幾次WA、深信下一次交出去的肯定會AC（並不會好嗎.jpg）</p>
@@ -559,9 +559,9 @@
           
             <a href="/tags/Algorithm/" rel="tag">🏷 Algorithm</a>
           
-            <a href="/tags/April-Fools-Day/" rel="tag">🏷 April Fools' Day</a>
-          
             <a href="/tags/Codeforces/" rel="tag">🏷 Codeforces</a>
+          
+            <a href="/tags/April-Fools-Day/" rel="tag">🏷 April Fools' Day</a>
           
         </div>
       
@@ -667,7 +667,7 @@
                   
                     
                   
-                  <a href="https://github.com/yctseng1227" title="GitHub &rarr; https://github.com/yctseng1227" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  <a href="https://github.com/yctseng1227" title="GitHub &rarr; https://github.com/yctseng1227" rel="noopener external nofollow noreferrer" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
                 </span>
               
                 <span class="links-of-author-item">
@@ -678,7 +678,7 @@
                   
                     
                   
-                  <a href="mailto:gene26620560@gmail.com" title="E-Mail &rarr; mailto:gene26620560@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  <a href="mailto:gene26620560@gmail.com" title="E-Mail &rarr; mailto:gene26620560@gmail.com" rel="noopener external nofollow noreferrer" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
                 </span>
               
                 <span class="links-of-author-item">
@@ -689,7 +689,7 @@
                   
                     
                   
-                  <a href="https://www.facebook.com/people/曾煜鈞/100005578654187" title="Facebook &rarr; https://www.facebook.com/people/曾煜鈞/100005578654187" rel="noopener" target="_blank"><i class="fa fa-fw fa-facebook-f"></i>Facebook</a>
+                  <a href="https://www.facebook.com/people/曾煜鈞/100005578654187" title="Facebook &rarr; https://www.facebook.com/people/曾煜鈞/100005578654187" rel="noopener external nofollow noreferrer" target="_blank"><i class="fa fa-fw fa-facebook-f"></i>Facebook</a>
                 </span>
               
                 <span class="links-of-author-item">
@@ -700,7 +700,7 @@
                   
                     
                   
-                  <a href="http://codeforces.com/profile/yctseng" title="Codeforces &rarr; http://codeforces.com/profile/yctseng" rel="noopener" target="_blank"><i class="fa fa-fw fa-poll"></i>Codeforces</a>
+                  <a href="http://codeforces.com/profile/yctseng" title="Codeforces &rarr; http://codeforces.com/profile/yctseng" rel="noopener external nofollow noreferrer" target="_blank"><i class="fa fa-fw fa-poll"></i>Codeforces</a>
                 </span>
               
                 <span class="links-of-author-item">
@@ -711,7 +711,7 @@
                   
                     
                   
-                  <a href="https://ctftime.org/user/65888" title="CTFtime &rarr; https://ctftime.org/user/65888" rel="noopener" target="_blank"><i class="fa fa-fw fa-flag-checkered"></i>CTFtime</a>
+                  <a href="https://ctftime.org/user/65888" title="CTFtime &rarr; https://ctftime.org/user/65888" rel="noopener external nofollow noreferrer" target="_blank"><i class="fa fa-fw fa-flag-checkered"></i>CTFtime</a>
                 </span>
               
                 <span class="links-of-author-item">
@@ -722,7 +722,7 @@
                   
                     
                   
-                  <a href="https://www.facebook.com/MacacaHub-107811803945876/" title="MacacaHub &rarr; https://www.facebook.com/MacacaHub-107811803945876/" rel="noopener" target="_blank"><i class="fa fa-fw fa-chess-queen"></i>MacacaHub</a>
+                  <a href="https://www.facebook.com/MacacaHub-107811803945876/" title="MacacaHub &rarr; https://www.facebook.com/MacacaHub-107811803945876/" rel="noopener external nofollow noreferrer" target="_blank"><i class="fa fa-fw fa-chess-queen"></i>MacacaHub</a>
                 </span>
               
             </div>
@@ -740,7 +740,7 @@
               <ul class="links-of-blogroll-list">
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://www.tinytsunami.info" title="https://www.tinytsunami.info" rel="noopener" target="_blank">羊羽手札</a>
+                    <a href="https://www.tinytsunami.info" title="https://www.tinytsunami.info" rel="noopener external nofollow noreferrer" target="_blank">羊羽手札</a>
                   </li>
                 
               </ul>
@@ -792,7 +792,7 @@
 
 <!--
 
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 強力驅動 v4.2.0</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener external nofollow noreferrer" target="_blank">Hexo</a> 強力驅動 v4.2.0</div>
 
 
 
@@ -800,7 +800,7 @@
 
 
 
-  <div class="theme-info">主題 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.1.0</div>
+  <div class="theme-info">主題 – <a href="https://theme-next.org" class="theme-link" rel="noopener external nofollow noreferrer" target="_blank">NexT.Gemini</a> v7.1.0</div>
 
 
 

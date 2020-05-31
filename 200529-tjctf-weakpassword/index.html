@@ -488,14 +488,14 @@
       
 
       
-        <p>Writeups 搬自 <a href="https://github.com/MacacaHub/CTF-writeups/blob/master/TJCTF%202020/Weak%20Password/readme.md" target="_blank" rel="noopener">MacacaHub TJCTF 2020 Writeups</a></p>
+        <p>Writeups 搬自 <a href="https://github.com/MacacaHub/CTF-writeups/blob/master/TJCTF%202020/Weak%20Password/readme.md" target="_blank" rel="noopener external nofollow noreferrer">MacacaHub TJCTF 2020 Writeups</a></p>
 <p>這題雖然叫Weak Password，但我當時遇到真的戳不出來呢 ; w ;</p>
 <p>最後賽後隊友提點才知道原來是<strong>Blind SQL injection</strong>，平常我只拿<code>&#39; or 1=1 --</code>戳戳根本是小兒科ww</p>
 <a id="more"></a>
-<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>It seems your login bypass skills are now famous! One of my friends has given you a challenge: figure out his password on this <a href="https://weak_password.tjctf.org/" target="_blank" rel="noopener">site</a>. He’s told me that his username is admin, and that his password is made of up only lowercase letters and numbers. (Wrap the password with tjctf{…})</p>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>It seems your login bypass skills are now famous! One of my friends has given you a challenge: figure out his password on this <a href="https://weak_password.tjctf.org/" target="_blank" rel="noopener external nofollow noreferrer">site</a>. He’s told me that his username is admin, and that his password is made of up only lowercase letters and numbers. (Wrap the password with tjctf{…})</p>
 <p><img src="https://github.com/MacacaHub/CTF-writeups/blob/master/TJCTF%202020/Weak%20Password/01.png?raw=true" alt=""></p>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>標題同樣為<strong>Weak Password</strong>，T貓盃只有<code>admin</code>:<code>admin</code>，這裡反而沒有這麼簡單XD</p>
-<p>從題目給定<code>username</code>為<code>admin</code>，以及從<code>source code</code>可以看到<code>SQL語法</code>以及一些欄位資訊，我們可以猜到這題要用<strong>Blind SQL injection</strong>，一些基本的猜法可以參考<a href="https://www.twblogs.net/a/5d0d7134bd9eee1ede0450b0" target="_blank" rel="noopener">此篇</a>，當然也可以從網頁把<code>password</code>每個字元慢慢猜出來，但身為未來工程屍… 還是寫個Code吧 : )</p>
+<p>從題目給定<code>username</code>為<code>admin</code>，以及從<code>source code</code>可以看到<code>SQL語法</code>以及一些欄位資訊，我們可以猜到這題要用<strong>Blind SQL injection</strong>，一些基本的猜法可以參考<a href="https://www.twblogs.net/a/5d0d7134bd9eee1ede0450b0" target="_blank" rel="noopener external nofollow noreferrer">此篇</a>，當然也可以從網頁把<code>password</code>每個字元慢慢猜出來，但身為未來工程屍… 還是寫個Code吧 : )</p>
 <p><img src="https://github.com/MacacaHub/CTF-writeups/blob/master/TJCTF%202020/Weak%20Password/02.png?raw=true" alt=""></p>
 <p>How to Guess ?</p>
 <p>透過<code>SQL injection</code>並利用登入結果判斷是否成功，想辦法從<code>username</code>撈出我們想要的資訊。</p>
@@ -665,7 +665,7 @@
                   
                     
                   
-                  <a href="https://github.com/yctseng1227" title="GitHub &rarr; https://github.com/yctseng1227" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  <a href="https://github.com/yctseng1227" title="GitHub &rarr; https://github.com/yctseng1227" rel="noopener external nofollow noreferrer" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
                 </span>
               
                 <span class="links-of-author-item">
@@ -676,7 +676,7 @@
                   
                     
                   
-                  <a href="mailto:gene26620560@gmail.com" title="E-Mail &rarr; mailto:gene26620560@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  <a href="mailto:gene26620560@gmail.com" title="E-Mail &rarr; mailto:gene26620560@gmail.com" rel="noopener external nofollow noreferrer" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
                 </span>
               
                 <span class="links-of-author-item">
@@ -687,7 +687,7 @@
                   
                     
                   
-                  <a href="https://www.facebook.com/people/曾煜鈞/100005578654187" title="Facebook &rarr; https://www.facebook.com/people/曾煜鈞/100005578654187" rel="noopener" target="_blank"><i class="fa fa-fw fa-facebook-f"></i>Facebook</a>
+                  <a href="https://www.facebook.com/people/曾煜鈞/100005578654187" title="Facebook &rarr; https://www.facebook.com/people/曾煜鈞/100005578654187" rel="noopener external nofollow noreferrer" target="_blank"><i class="fa fa-fw fa-facebook-f"></i>Facebook</a>
                 </span>
               
                 <span class="links-of-author-item">
@@ -698,7 +698,7 @@
                   
                     
                   
-                  <a href="http://codeforces.com/profile/yctseng" title="Codeforces &rarr; http://codeforces.com/profile/yctseng" rel="noopener" target="_blank"><i class="fa fa-fw fa-poll"></i>Codeforces</a>
+                  <a href="http://codeforces.com/profile/yctseng" title="Codeforces &rarr; http://codeforces.com/profile/yctseng" rel="noopener external nofollow noreferrer" target="_blank"><i class="fa fa-fw fa-poll"></i>Codeforces</a>
                 </span>
               
                 <span class="links-of-author-item">
@@ -709,7 +709,7 @@
                   
                     
                   
-                  <a href="https://ctftime.org/user/65888" title="CTFtime &rarr; https://ctftime.org/user/65888" rel="noopener" target="_blank"><i class="fa fa-fw fa-flag-checkered"></i>CTFtime</a>
+                  <a href="https://ctftime.org/user/65888" title="CTFtime &rarr; https://ctftime.org/user/65888" rel="noopener external nofollow noreferrer" target="_blank"><i class="fa fa-fw fa-flag-checkered"></i>CTFtime</a>
                 </span>
               
                 <span class="links-of-author-item">
@@ -720,7 +720,7 @@
                   
                     
                   
-                  <a href="https://www.facebook.com/MacacaHub-107811803945876/" title="MacacaHub &rarr; https://www.facebook.com/MacacaHub-107811803945876/" rel="noopener" target="_blank"><i class="fa fa-fw fa-chess-queen"></i>MacacaHub</a>
+                  <a href="https://www.facebook.com/MacacaHub-107811803945876/" title="MacacaHub &rarr; https://www.facebook.com/MacacaHub-107811803945876/" rel="noopener external nofollow noreferrer" target="_blank"><i class="fa fa-fw fa-chess-queen"></i>MacacaHub</a>
                 </span>
               
             </div>
@@ -738,7 +738,7 @@
               <ul class="links-of-blogroll-list">
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://www.tinytsunami.info" title="https://www.tinytsunami.info" rel="noopener" target="_blank">羊羽手札</a>
+                    <a href="https://www.tinytsunami.info" title="https://www.tinytsunami.info" rel="noopener external nofollow noreferrer" target="_blank">羊羽手札</a>
                   </li>
                 
               </ul>
@@ -807,7 +807,7 @@
 
 <!--
 
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 強力驅動 v4.2.0</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener external nofollow noreferrer" target="_blank">Hexo</a> 強力驅動 v4.2.0</div>
 
 
 
@@ -815,7 +815,7 @@
 
 
 
-  <div class="theme-info">主題 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.1.0</div>
+  <div class="theme-info">主題 – <a href="https://theme-next.org" class="theme-link" rel="noopener external nofollow noreferrer" target="_blank">NexT.Gemini</a> v7.1.0</div>
 
 
 
