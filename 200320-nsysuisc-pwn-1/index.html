@@ -118,7 +118,7 @@
 <meta property="og:image" content="https://photos.smugmug.com/photos/i-vmX8nT2/0/b97de34e/S/i-vmX8nT2-S.png">
 <meta property="og:image" content="https://photos.smugmug.com/photos/i-nWpmnNR/0/654a0485/S/i-nWpmnNR-S.png">
 <meta property="article:published_time" content="2020-03-22T02:45:23.000Z">
-<meta property="article:modified_time" content="2020-05-29T11:25:10.786Z">
+<meta property="article:modified_time" content="2020-06-18T04:40:04.979Z">
 <meta property="article:author" content="yctseng">
 <meta property="article:tag" content="Pwn Challenge">
 <meta property="article:tag" content="NSYSUISC">
@@ -535,7 +535,7 @@
 </blockquote>
 <p>以這題來說我們可以用反組譯指令<code>objdump</code>瞭解一下程式架構<br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> objdump -d -M intel ./password</span></span><br></pre></td></tr></table></figure></p>
 <p>Stack內容的部分畫成圖大概長得像這樣<br><img src="https://photos.smugmug.com/photos/i-TcQ7Mhh/0/6d3aacdf/S/i-TcQ7Mhh-S.png" alt=""></p>
-<p>我們這次輸入改成”12345678haha”，”haha”就會蓋到變數<code>password</code>的值囉~<br><img src="https://photos.smugmug.com/photos/i-jQZg5kx/0/f2aef2a7/S/i-jQZg5kx-S.png" alt=""></p>
+<p>我們這次輸入改成”aaaaaaaahaha”，”haha”就會蓋到變數<code>password</code>的值囉~<br><img src="https://photos.smugmug.com/photos/i-jQZg5kx/0/f2aef2a7/S/i-jQZg5kx-S.png" alt=""></p>
 <p>聰明的你應該知道怎麼做了吧 (｡･ω･｡)<br>沒有錯的啦！將上面的”haha”改成”password”就能啟動<code>shell()</code>拿到root權限了！</p>
 <p>話說回來<br>往後能夠透過手動輸入就破解的Pwn題並不常見<br>因此這類型的題目通常會搭配python套件<code>pwntool</code>進行exploit</p>
 <p>↓↓↓ 以這題來說用pwntool可以這樣寫 ↓↓↓</p>
