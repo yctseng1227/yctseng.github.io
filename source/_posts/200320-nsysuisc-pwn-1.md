@@ -155,7 +155,7 @@ $ objdump -d -M intel ./password
 Stack內容的部分畫成圖大概長得像這樣
 ![](https://photos.smugmug.com/photos/i-TcQ7Mhh/0/6d3aacdf/S/i-TcQ7Mhh-S.png)
 
-我們這次輸入改成"12345678haha"，"haha"就會蓋到變數`password`的值囉~
+我們這次輸入改成"aaaaaaaahaha"，"haha"就會蓋到變數`password`的值囉~
 ![](https://photos.smugmug.com/photos/i-jQZg5kx/0/f2aef2a7/S/i-jQZg5kx-S.png)
 
 

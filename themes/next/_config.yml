@@ -1217,3 +1217,11 @@ js: js
 images: images
 
 
+# 減少出站連結導致權重被分散
+nofollow:
+  enable: true
+  field: site
+  exclude:
+    - 'exclude1.com'
+    - 'exclude2.com'
+
