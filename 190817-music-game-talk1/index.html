@@ -524,7 +524,7 @@
 <ul>
 <li>主副卡總道數約3500道</li>
 </ul>
-<p><img width="400px" src="https://i.imgur.com/wsNPW3U.png"/></p>
+<p><img width="400px" src="https://i.imgur.com/wsNPW3U.png"></p>
 </li>
 <li><p>DANCERUSH STARDOM（2018.9 入坑）</p>
 </li>
@@ -540,7 +540,7 @@
 <ul>
 <li>目前音Game主坑，算是等maimai DX的消遣（？</li>
 </ul>
-<p><img width="600px" src="https://i.imgur.com/yQy0R4h.png"/></p>
+<p><img width="600px" src="https://i.imgur.com/yQy0R4h.png"></p>
 </li>
 <li><p>SDVX（極少接觸）</p>
 </li>
@@ -551,7 +551,25 @@
 <li><p>CHUNITHM（日本限定）</p>
 </li>
 </ul>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
       
     </div>
 

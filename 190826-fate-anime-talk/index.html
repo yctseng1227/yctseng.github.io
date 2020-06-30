@@ -483,7 +483,7 @@
       
 
       
-        <p><img width="800px" src="https://i.imgur.com/0JwWkJf.png"/></p>
+        <p><img width="800px" src="https://i.imgur.com/0JwWkJf.png"></p>
 <p>放張ライネス鎮樓、在二世事件簿中真的超可愛der  ٩(ˊᗜˋ*)و</p>
 <a id="more"></a>
 <p>會寫到這篇的原因是巴哈姆特這篇：<br><strong><a href="https://forum.gamer.com.tw/Co.php?bsn=09009&amp;sn=106540&amp;subbsn=0" target="_blank" rel="noopener external nofollow noreferrer">RE:【問題】請問動畫目前有哪些種類?</a></strong></p>
@@ -636,7 +636,25 @@
 </ul>
 </li>
 </ul>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
       
     </div>
 
@@ -885,7 +903,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#本傳"><span class="nav-text">本傳</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#外傳"><span class="nav-text">外傳</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-text">其他</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#本傳"><span class="nav-number">1.</span> <span class="nav-text">本傳</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#外傳"><span class="nav-number">2.</span> <span class="nav-text">外傳</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-number">3.</span> <span class="nav-text">其他</span></a></li></ol></div>
             
 
           </div>

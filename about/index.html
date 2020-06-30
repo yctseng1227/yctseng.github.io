@@ -422,7 +422,25 @@
 </blockquote>
 <p>總之呢，若要問我大學到底幹了什麼？大概就是競程吧，之後會聊到。<br>在一些 OJ 像是 UVa、Codeforces、AtCoder 都找得到我，歡迎來信交流～</p>
 <p>目前預計每週生一文篇，初期會有很多想法，後期就…(笑)<br>就醬，じゃね ᕕ ( ᐛ ) ᕗ</p>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
         
       </div>
       

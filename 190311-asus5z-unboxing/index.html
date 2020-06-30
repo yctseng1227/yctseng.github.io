@@ -498,7 +498,25 @@
 <p>沒想過身為索粉的我會有脫離SONY的一天 XD<br>畢竟前幾隻手機都是直接從SONY的機種挑… 但這次X1真的好長。<br>甚至還被戲稱遙控器www 真的怕口袋不夠深塞不下（Ｏ</p>
 <p>以往換手機我都還會在巴哈小屋po開箱文<br>至於5Z的開箱嘛，看起來好像沒什麼好開，反倒是Android 9要適應一陣子。<br>（之前的XZ只能更新到Android 8.0.0）</p>
 <p>就醬子吧，雖然很想把研究所心得貼出來。<br>無奈到現在我仍然還在猶豫，很討厭自己選擇障礙的個性QQ<br>可能會拆成兩篇，下週先放個&lt;上篇&gt;好了~~ （希望懶癌不要發作</p>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
       
     </div>
 

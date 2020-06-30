@@ -519,11 +519,11 @@
 <ul>
 <li>import: 讀檔格式如下</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">P 103 200</span><br><span class="line">P 193 64</span><br><span class="line">P 193 370</span><br><span class="line">P 283 200</span><br><span class="line">E 0 34 193 161</span><br><span class="line">E 0 363 193 261</span><br><span class="line">E 193 161 193 261</span><br><span class="line">E 193 161 437 0</span><br><span class="line">E 193 261 600 476</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">P 103 200</span><br><span class="line">P 193 64</span><br><span class="line">P 193 370</span><br><span class="line">P 283 200</span><br><span class="line">E 0 34 193 161</span><br><span class="line">E 0 363 193 261</span><br><span class="line">E 193 161 193 261</span><br><span class="line">E 193 161 437 0</span><br><span class="line">E 193 261 600 476</span><br></pre></td></tr></tbody></table></figure>
 <ul>
 <li>load: 讀檔格式如下</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># comment</span><br><span class="line">6</span><br><span class="line">487 191</span><br><span class="line">417 388</span><br><span class="line">504 349</span><br><span class="line">681 125</span><br><span class="line">589 282</span><br><span class="line">725 279</span><br><span class="line">6</span><br><span class="line">69 304</span><br><span class="line">110 449</span><br><span class="line">174 333</span><br><span class="line">244 280</span><br><span class="line">335 139</span><br><span class="line">355 284</span><br><span class="line">12</span><br><span class="line">69 304</span><br><span class="line">174 333</span><br><span class="line">110 449</span><br><span class="line">335 139</span><br><span class="line">244 280</span><br><span class="line">355 284</span><br><span class="line">487 191</span><br><span class="line">417 388</span><br><span class="line">504 349</span><br><span class="line">681 125</span><br><span class="line">589 282</span><br><span class="line">725 279</span><br><span class="line">0</span><br><span class="line"># any else?</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"># comment</span><br><span class="line">6</span><br><span class="line">487 191</span><br><span class="line">417 388</span><br><span class="line">504 349</span><br><span class="line">681 125</span><br><span class="line">589 282</span><br><span class="line">725 279</span><br><span class="line">6</span><br><span class="line">69 304</span><br><span class="line">110 449</span><br><span class="line">174 333</span><br><span class="line">244 280</span><br><span class="line">335 139</span><br><span class="line">355 284</span><br><span class="line">12</span><br><span class="line">69 304</span><br><span class="line">174 333</span><br><span class="line">110 449</span><br><span class="line">335 139</span><br><span class="line">244 280</span><br><span class="line">355 284</span><br><span class="line">487 191</span><br><span class="line">417 388</span><br><span class="line">504 349</span><br><span class="line">681 125</span><br><span class="line">589 282</span><br><span class="line">725 279</span><br><span class="line">0</span><br><span class="line"># any else?</span><br></pre></td></tr></tbody></table></figure>
 <ul>
 <li>random: 隨機生成N個點，預設為6點可重複疊加</li>
 <li>save: 將point, edge存成<code>import</code>格式</li>
@@ -535,7 +535,7 @@
 </ul>
 <p>環境</p>
 <ul>
-<li>Operating System<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">                         ./+o+-       </span><br><span class="line">                 yyyyy- -yyyyyy+      Username: yctseng</span><br><span class="line">              :<span class="comment">//+//////-yyyyyyo      OS: Ubuntu 18.04 bionic</span></span><br><span class="line">          .++ .:<span class="regexp">/++++++/</span>-.+sss/<span class="string">`      Kernel: x86_64 Linux 5.0.0-36-generic</span></span><br><span class="line"><span class="string">        .:++o:  /++++++++/:--:/-      Uptime: 9d 18h 15m</span></span><br><span class="line"><span class="string">       o:+o+:++.`</span>..<span class="string">``</span><span class="string">`.-/oo+++++/     Packages: 2347</span></span><br><span class="line"><span class="string">      .:+o:+o/.          `</span>+sssoo+<span class="regexp">/    Shell: bash 4.4.20</span></span><br><span class="line"><span class="regexp"> .++/</span>+:+oo+o:<span class="string">`             /sssooo.   Resolution: 3840x1080</span></span><br><span class="line"><span class="string">/+++//+:`</span>oo+o               /::--:.   DE: GNOME </span><br><span class="line">\+<span class="regexp">/+o+++`o++o               ++/</span><span class="comment">///.   WM: GNOME Shell</span></span><br><span class="line"> .++.o+++oo+:<span class="string">`             /dddhhh.   WM Theme: Adwaita</span></span><br><span class="line"><span class="string">      .+.o+oo:.          `</span>oddhhhh+    GTK Theme: Ambiance [GTK2/<span class="number">3</span>]</span><br><span class="line">       \+.++o+o<span class="string">``</span>-<span class="string">``</span><span class="string">``</span>.:ohdhhhhh+     Icon Theme: ubuntu-mono-dark</span><br><span class="line">        <span class="string">`:o+++ `</span>ohhhhhhhhyo++os:      Font: Ubuntu <span class="number">11</span></span><br><span class="line">          .o:<span class="string">`.syhhhhhhh/.oo++o`</span>      CPU: Intel Core i7<span class="number">-8700</span> @ <span class="number">12</span>x <span class="number">4.6</span>GHz</span><br><span class="line">              /osyyyyyyo++ooo+++<span class="regexp">/     GPU: intel</span></span><br><span class="line"><span class="regexp">                  ````` +oo+++o\:     RAM: 15831MiB</span></span><br><span class="line"><span class="regexp">                         `oo++.</span></span><br></pre></td></tr></table></figure></li>
+<li>Operating System<figure class="highlight javascript"><table><tbody><tr><td class="code"><pre><span class="line">                         ./+o+-       </span><br><span class="line">                 yyyyy- -yyyyyy+      Username: yctseng</span><br><span class="line">              :<span class="comment">//+//////-yyyyyyo      OS: Ubuntu 18.04 bionic</span></span><br><span class="line">          .++ .:<span class="regexp">/++++++/</span>-.+sss/<span class="string">`      Kernel: x86_64 Linux 5.0.0-36-generic</span></span><br><span class="line"><span class="string">        .:++o:  /++++++++/:--:/-      Uptime: 9d 18h 15m</span></span><br><span class="line"><span class="string">       o:+o+:++.`</span>..<span class="string">``</span><span class="string">`.-/oo+++++/     Packages: 2347</span></span><br><span class="line"><span class="string">      .:+o:+o/.          `</span>+sssoo+<span class="regexp">/    Shell: bash 4.4.20</span></span><br><span class="line"><span class="regexp"> .++/</span>+:+oo+o:<span class="string">`             /sssooo.   Resolution: 3840x1080</span></span><br><span class="line"><span class="string">/+++//+:`</span>oo+o               /::--:.   DE: GNOME </span><br><span class="line">\+<span class="regexp">/+o+++`o++o               ++/</span><span class="comment">///.   WM: GNOME Shell</span></span><br><span class="line"> .++.o+++oo+:<span class="string">`             /dddhhh.   WM Theme: Adwaita</span></span><br><span class="line"><span class="string">      .+.o+oo:.          `</span>oddhhhh+    GTK Theme: Ambiance [GTK2/<span class="number">3</span>]</span><br><span class="line">       \+.++o+o<span class="string">``</span>-<span class="string">``</span><span class="string">``</span>.:ohdhhhhh+     Icon Theme: ubuntu-mono-dark</span><br><span class="line">        <span class="string">`:o+++ `</span>ohhhhhhhhyo++os:      Font: Ubuntu <span class="number">11</span></span><br><span class="line">          .o:<span class="string">`.syhhhhhhh/.oo++o`</span>      CPU: Intel Core i7<span class="number">-8700</span> @ <span class="number">12</span>x <span class="number">4.6</span>GHz</span><br><span class="line">              /osyyyyyyo++ooo+++<span class="regexp">/     GPU: intel</span></span><br><span class="line"><span class="regexp">                  ````` +oo+++o\:     RAM: 15831MiB</span></span><br><span class="line"><span class="regexp">                         `oo++.</span></span><br></pre></td></tr></tbody></table></figure></li>
 <li>Python3.6 (Virtual environment)</li>
 <li>Package version<ul>
 <li>imutils==0.5.3</li>
@@ -571,9 +571,27 @@ Return\ Merge(f(point\ set[0, n/2]),f(point\ set[n/2, n])) && n > 3 \\
 <li>step 3. 根據撞到的edge進行參考點移動，並消除多餘的線。</li>
 <li>step 4. 重複step 2和step 3，直到兩邊point set走到底為止。</li>
 </ul>
-<p><center>(下面兩張圖各6點。<font color="#0000FF">藍線為CH</font>; <font color="#00FF00">綠線為VD</font>; <font color="FF0000">紅線為Hyperplane</font>)</center><br><div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 50%;"><img src="https://github.com/yctseng1227/voronoi_project/blob/master/pic/pic07.png?raw=true =340x" alt=""></div><div class="group-picture-column" style="width: 50%;"><img src="https://github.com/yctseng1227/voronoi_project/blob/master/pic/pic06.png?raw=true =340x" alt=""></div></div></div></div></p>
+<p></p><center>(下面兩張圖各6點。<font color="#0000FF">藍線為CH</font>; <font color="#00FF00">綠線為VD</font>; <font color="FF0000">紅線為Hyperplane</font>)</center><br><div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 50%;"><img src="https://github.com/yctseng1227/voronoi_project/blob/master/pic/pic07.png?raw=true =340x" alt=""></div><div class="group-picture-column" style="width: 50%;"><img src="https://github.com/yctseng1227/voronoi_project/blob/master/pic/pic06.png?raw=true =340x" alt=""></div></div></div></div><p></p>
 <h3 id="Result"><a href="#Result" class="headerlink" title="Result"></a><strong>Result</strong></h3><p><img src="https://github.com/yctseng1227/voronoi_project/blob/master/pic/pic03.png?raw=true" alt=""></p>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
       
     </div>
 
@@ -820,7 +838,7 @@ Return\ Merge(f(point\ set[0, n/2]),f(point\ set[n/2, n])) && n > 3 \\
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Data-Structure"><span class="nav-text">Data Structure</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Algorithm"><span class="nav-text">Algorithm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Result"><span class="nav-text">Result</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Data-Structure"><span class="nav-number">1.</span> <span class="nav-text">Data Structure</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Algorithm"><span class="nav-number">2.</span> <span class="nav-text">Algorithm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Result"><span class="nav-number">3.</span> <span class="nav-text">Result</span></a></li></ol></div>
             
 
           </div>

@@ -117,9 +117,9 @@
 <meta property="article:published_time" content="2019-04-02T10:37:00.000Z">
 <meta property="article:modified_time" content="2020-05-30T14:16:23.570Z">
 <meta property="article:author" content="yctseng">
-<meta property="article:tag" content="April Fools&#39; Day">
 <meta property="article:tag" content="Algorithm">
 <meta property="article:tag" content="Codeforces">
+<meta property="article:tag" content="April Fools&#39; Day">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://i.imgur.com/1PzScrI.png">
 
@@ -504,7 +504,7 @@
 <p>題目給了很神秘的電路…然後要你輸入 $a (0≤a≤15)$ 、輸出整數，沒了。</p>
 <p>老實說這題摸半天還是沒有頭緒，倒是友人在 <a href="https://algassert.com/quirk" target="_blank" rel="noopener external nofollow noreferrer">Quirk</a> 把電路拼起來丟0101測一測就發現答案了，莫名其妙XD</p>
 <p>附上code，若非該領域的玩家應該都想不到吧…</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n; <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">	<span class="keyword">int</span> arr[] = &#123;<span class="number">15</span>, <span class="number">14</span>, <span class="number">12</span>, <span class="number">13</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">11</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>&#125;;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; arr[n] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">	<span class="keyword">int</span> n; <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">	<span class="keyword">int</span> arr[] = {<span class="number">15</span>, <span class="number">14</span>, <span class="number">12</span>, <span class="number">13</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">11</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>};</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; arr[n] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 <p>&nbsp;</p>
 <p><a href="https://codeforces.com/contest/1145/problem/D" target="_blank" rel="noopener external nofollow noreferrer">Problem D - Pigeon d’Or</a></p>
 <p>讓我花最久的題目，老實說真的差一步就解出來了QQ</p>
@@ -524,7 +524,25 @@
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>差不多就這樣、思考的過程真的蠻有趣的<br>畢竟沒給其他線索真的只能無厘頭隨便猜、看到丟100次才AC都不會感到驚訝<br>反而覺得「居然猜到AC實在太神laaaaaaaaa」 www</p>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
       
     </div>
 
@@ -557,11 +575,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/April-Fools-Day/" rel="tag">🏷 April Fools' Day</a>
-          
             <a href="/tags/Algorithm/" rel="tag">🏷 Algorithm</a>
           
             <a href="/tags/Codeforces/" rel="tag">🏷 Codeforces</a>
+          
+            <a href="/tags/April-Fools-Day/" rel="tag">🏷 April Fools' Day</a>
           
         </div>
       

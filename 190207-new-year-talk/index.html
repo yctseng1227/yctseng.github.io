@@ -494,7 +494,25 @@
 <li>NUKCPC: 一篇關於高大競程的文章，原定是IOI camp前要丟出來，結果就是因為某研所害我行程全部都卡住 嗚嗚QQ  </li>
 </ol>
 <p>大概就醬。<br>我還在摸索寫文章的風格，畢竟用Facebook久了在段落的排版上還是習慣一句話直接換行，看來要想個方法調整一下~ 努力還債囉ww</p>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
       
     </div>
 

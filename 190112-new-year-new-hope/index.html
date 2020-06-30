@@ -519,7 +519,25 @@
 <p>目前狀態是剛結束研究所推甄還在等某間備取 zzz。<br>歷經國高中考試人生，所以當去年底得知名次可以推推看就毫不猶豫衝了！<br>姑且算有學校念，但等到結果確定應該會再另外生一篇關於推甄的心得～<br>既然是新希望那當然指的是進去後能夠順利… 至少要努力活下去(?)</p>
 <p>&nbsp;<br>&nbsp;</p>
 <p>大概就醬吧：）<br>其他像是減肥、找失蹤的女朋友之類的年年都在許願就算了www<br>至少今年希望可以順利，距離學生生活好像越來越接近尾聲呢 QQ</p>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
       
     </div>
 
