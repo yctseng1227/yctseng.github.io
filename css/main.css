@@ -1768,7 +1768,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #3b6cec;
+  background: #b606a2;
 }
 .feed-link,
 .chat {
@@ -1854,66 +1854,6 @@ pre .javascript .function {
 }
 .sidebar-panel-active {
   display: block;
-}
-.post-toc-empty {
-  font-size: 14px;
-  color: #666;
-}
-.post-toc-wrap {
-  overflow: hidden;
-}
-.post-toc {
-  overflow: auto;
-}
-.post-toc ol {
-  margin: 0;
-  padding: 0 2px 5px 10px;
-  text-align: left;
-  list-style: none;
-  font-size: 14px;
-}
-.post-toc ol > ol {
-  padding-left: 0;
-}
-.post-toc ol a {
-  transition-duration: 0.2s;
-  transition-timing-function: ease-in-out;
-  transition-delay: 0s;
-  transition-property: all;
-  color: #666;
-  border-bottom-color: #ccc;
-}
-.post-toc ol a:hover {
-  color: #000;
-  border-bottom-color: #000;
-}
-.post-toc .nav-item {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  line-height: 1.8;
-}
-.post-toc .nav .nav-child {
-  display: none;
-}
-.post-toc .nav .active > .nav-child {
-  display: block;
-}
-.post-toc .nav .active-current > .nav-child {
-  display: block;
-}
-.post-toc .nav .active-current > .nav-child > .nav-item {
-  display: block;
-}
-.post-toc .nav .active > a {
-  color: #fc6423;
-  border-bottom-color: #fc6423;
-}
-.post-toc .nav .active-current > a {
-  color: #fc6423;
-}
-.post-toc .nav .active-current > a:hover {
-  color: #fc6423;
 }
 .footer {
   font-size: 14px;
