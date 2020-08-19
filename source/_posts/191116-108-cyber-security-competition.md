@@ -2,8 +2,9 @@
 title: 【CTF】108年金盾獎決賽 麥當勞吃到飽 ฅ'ω'ฅ
 date: 2019-11-16 02:38:09
 categories: 
-- CTF
+- Security
 tags:
+- CTF
 - 108金盾獎
 
 ---

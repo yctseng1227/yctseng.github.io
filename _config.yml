@@ -90,5 +90,14 @@ encrypt:
 # https://github.com/coneycode/hexo-git-backup
 backup:
     type: git
+    theme: next
     repository:
-       github: git@github.com:yctseng1227/yctseng1227.github.io.git
+       github: git@github.com:yctseng1227/yctseng1227.github.io.git,hexo
+
+# emoji
+githubEmojis:
+  enable: true
+  idName: github-emoji
+  unicode: false
+  styles:
+  localEmojis:

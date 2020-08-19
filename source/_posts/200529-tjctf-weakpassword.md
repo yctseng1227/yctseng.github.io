@@ -2,11 +2,11 @@
 title: TJCTF 2020 - Weak Password (Web)
 date: 2020-05-29 11:37:12
 categories: 
+- Security
+tags:
 - CTF
-tag:
 - TJCTF 2020
 - Web Challenge
-- blind SQLi
 ---
 
 Writeups 搬自 [MacacaHub TJCTF 2020 Writeups](https://github.com/MacacaHub/CTF-writeups/blob/master/TJCTF%202020/Weak%20Password/readme.md)
